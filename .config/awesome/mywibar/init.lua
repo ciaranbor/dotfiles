@@ -7,6 +7,7 @@ local utils = require("utils")
 
 local mytextclock = require("widgets.clock")
 local volume = require("widgets.volume")
+local media = require("widgets.media")
 local net_widget = require("widgets.net")
 local mylauncher = require("mywibar.launcher")
 
@@ -170,6 +171,20 @@ function mywibar.init(tags)
                     },
                     {
                         volume.image,
+                        color = beautiful.bg_focus,
+                        shape = utils.shape.parallelogram.right,
+                        margin = beautiful.gap,
+                    }
+                },
+                -- Media Status 
+                utils.widget.compose{
+                    {
+                        media.text,
+                        color = beautiful.fg_normal,
+                        shape = utils.shape.parallelogram.right
+                    },
+                    {
+                        media.image,
                         color = beautiful.bg_focus,
                         shape = utils.shape.parallelogram.right,
                         margin = beautiful.gap,

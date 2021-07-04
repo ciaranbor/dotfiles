@@ -3,6 +3,7 @@ local beautiful = require("beautiful")
 local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local volume = require("widgets.volume")
+local media = require("widgets.media")
 local mymainmenu = require("widgets.menu")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for Vim, etc when client with a matching name is
@@ -134,15 +135,10 @@ bindings.globalkeys = gears.table.join(
     awful.key({}, "XF86AudioMute", volume.toggle),
 
     -- Media Keys
-    awful.key({}, "XF86AudioPlay", function()
-        awful.util.spawn("playerctl play-pause", false)
-    end),
-    awful.key({}, "XF86AudioNext", function()
-        awful.util.spawn("playerctl next", false)
-    end),
-    awful.key({}, "XF86AudioPrev", function()
-        awful.util.spawn("playerctl previous", false)
-    end)
+    awful.key({}, "XF86AudioPlay", media.toggle),
+    awful.key({}, "XF86AudioStop", media.stop),
+    awful.key({}, "XF86AudioNext", media.next),
+    awful.key({}, "XF86AudioPrev", media.previous)
 )
 
 bindings.clientkeys = gears.table.join(
