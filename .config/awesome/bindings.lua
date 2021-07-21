@@ -1,7 +1,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
-local hotkeys_popup = require("awful.hotkeys_popup")
 local volume = require("widgets.volume")
 local media = require("widgets.media")
 local mymainmenu = require("widgets.menu")

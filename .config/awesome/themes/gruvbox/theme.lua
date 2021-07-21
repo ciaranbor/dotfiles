@@ -52,13 +52,11 @@ theme.bg0_h         = "#1d2021"
 theme.bg_normal     = theme.bg0_h
 theme.bg_focus      = theme.bg1 
 theme.bg_urgent     = theme.bg0_h 
-theme.bg_minimize   = theme.bg0_h 
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = theme.fg4
 theme.fg_focus      = theme.fg1
 theme.fg_urgent     = theme.lightorange
-theme.fg_minimize   = theme.fg4
 
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(0)
