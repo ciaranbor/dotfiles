@@ -2,6 +2,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local bindings = require("bindings")
+local gears = require("gears")
 
 local clients = {}
 
@@ -129,6 +130,43 @@ function clients.init(args)
             layout = wibox.layout.align.horizontal
         }
     end)
+
+    -- global titlebar
+    -------------------------------------------------------------------------------
+    local function title_create(c)
+      return wibox.widget {
+        markup = "<b>" .. (c.class or "client") .. "</b>",
+        align = "center",
+        widget = wibox.widget.textbox,
+      }
+    end
+
+    local function title_insert(c)
+      if not c.title then
+        c.title = title_create(c)
+      end
+      c.screen.title_container.widget = c.title
+      c.title_container = c.screen.title_container
+    end
+
+    local function title_update(c)
+      if c.title then
+        c.title:set_markup("<b>" .. (c.class or "client") .. "</b>")
+      end
+    end
+
+    local function title_remove(c)
+      -- delay unsetting of titlebar text to remove flickering on change
+      gears.timer.delayed_call(function(title, container)
+        if title and container and container.widget == title then
+          container.widget = nil
+        end
+      end, c.title, c.title_container)
+    end
+
+    client.connect_signal("property::name", title_update)
+    client.connect_signal("focus", title_insert)
+    client.connect_signal("unfocus", title_remove)
 
     -- Enable sloppy focus, so that focus follows mouse.
     client.connect_signal("mouse::enter", function(c)
