@@ -31,29 +31,6 @@ local taglist_buttons = gears.table.join(
     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
-local tasklist_buttons = gears.table.join(
-    awful.button({ }, 1, function (c)
-        if c == client.focus then
-            c.minimized = true
-        else
-            c:emit_signal(
-                "request::activate",
-                "tasklist",
-                {raise = true}
-            )
-        end
-    end),
-    awful.button({ }, 3, function()
-                             awful.menu.client_list({ theme = { width = 250 } })
-                         end),
-    awful.button({ }, 4, function ()
-                             awful.client.focus.byidx(1)
-                         end),
-    awful.button({ }, 5, function ()
-                             awful.client.focus.byidx(-1)
-                         end)
-)
-
 local widget_template = {
   {
     {
@@ -89,7 +66,7 @@ function mywibar.init(tags)
     tags = tags or { 1, 2, 3, 4, 5, 6, 7, 8, 9 }
     awful.screen.connect_for_each_screen(function(s)
         -- Each screen has its own tag table.
-        awful.tag(tags, s, awful.layout.layouts[1])
+        awful.tag(tags, s, awful.layout.layouts[2])
 
         -- Create a promptbox for each screen
         s.mypromptbox = awful.widget.prompt()
@@ -110,13 +87,6 @@ function mywibar.init(tags)
             },
             widget_template = widget_template,
             buttons = taglist_buttons
-        }
-
-        -- Create a tasklist widget
-        s.mytasklist = awful.widget.tasklist {
-            screen  = s,
-            filter  = awful.widget.tasklist.filter.currenttags,
-            buttons = tasklist_buttons
         }
 
         -- Create the wibox
