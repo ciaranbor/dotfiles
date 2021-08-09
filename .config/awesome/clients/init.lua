@@ -6,15 +6,6 @@ local gears = require("gears")
 
 local clients = {}
 
-local tags = awful.screen.focused().tags
-
-clients.browser = function ()
-    awful.spawn(browser, { switchtotag = true })
-end
-clients.steam = function ()
-    awful.spawn(steam, { tag = tags[3] })
-end
-
 function clients.init(args)
     args = args or {}
 

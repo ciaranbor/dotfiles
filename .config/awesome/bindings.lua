@@ -3,6 +3,7 @@ local beautiful = require("beautiful")
 local gears = require("gears")
 local volume = require("widgets.volume")
 local media = require("widgets.media")
+local apps = require("clients.apps")
 local mymainmenu = require("widgets.menu")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for Vim, etc when client with a matching name is
@@ -75,6 +76,15 @@ bindings.globalkeys = gears.table.join(
     -- Standard program
     awful.key({ bindings.modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    awful.key({ bindings.modkey,           }, "b", apps.browser,
+              {description = "open a browser window", group = "launcher"}),
+    awful.key({ bindings.modkey,           }, "g", apps.steam,
+              {description = "launch steam", group = "launcher"}),
+    awful.key({ bindings.modkey,           }, "v", apps.media,
+              {description = "launch media programs", group = "launcher"}),
+    awful.key({ bindings.modkey, "Shift"   }, "s", apps.social,
+              {description = "launch social programs", group = "launcher"}),
+
     awful.key({ bindings.modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ bindings.modkey, "Shift"   }, "q", awesome.quit,
