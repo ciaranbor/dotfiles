@@ -8,14 +8,15 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
+local awful = require("awful")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/ciaran/.config/awesome/themes/gruvbox/theme.lua")
+beautiful.init("~/.config/awesome/themes/gruvbox/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty -1"
-browser = os.getenv("BROWSER") or "firefox"
+browser = "qutebrowser" or "firefox"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -70,3 +71,5 @@ mywibar.init(tags)
 
 local clients = require("clients")
 clients.init()
+
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
