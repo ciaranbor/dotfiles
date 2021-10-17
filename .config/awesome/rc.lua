@@ -17,6 +17,7 @@ beautiful.init("~/.config/awesome/themes/gruvbox/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty -1"
 browser = "qutebrowser" or "firefox"
+browser2 = "firefox"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
