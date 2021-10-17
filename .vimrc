@@ -50,8 +50,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'kjwon15/vim-transparent'
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'ianding1/leetcode.vim'
 
 call plug#end()
+
+# Theme
 
 silent! colorscheme gruvbox
 set background=dark
@@ -68,9 +71,13 @@ let g:lightline = {
       \ },
       \ }
 
+" Rip grep 
+
 if executable('rg')
     let g:rg_derive_root='true'
 endif
+
+" Git Fugitive 
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_browse_split=2
@@ -165,3 +172,14 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>jF  <Plug>(coc-fix-current)
 
 let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', 'coc-fzf-preview', 'coc-git', 'coc-go', 'coc-markdownlint', 'coc-python', 'coc-sh', 'coc-texlab', 'coc-yaml', 'coc-java']
+
+" Leetcode
+
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
+
+let g:leetcode_solution_filetype = 'cpp'
+let g:leetcode_browser = 'firefox'
+let g:leetcode_hide_paid_only = 1
