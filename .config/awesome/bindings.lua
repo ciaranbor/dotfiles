@@ -149,7 +149,19 @@ bindings.globalkeys = gears.table.join(
     awful.key({}, "XF86AudioPlay", media.toggle),
     awful.key({}, "XF86AudioStop", media.stop),
     awful.key({}, "XF86AudioNext", media.next),
-    awful.key({}, "XF86AudioPrev", media.previous)
+    awful.key({}, "XF86AudioPrev", media.previous),
+
+    -- Brightness Keys
+    awful.key({}, "XF86MonBrightnessDown",
+        function()
+            awful.spawn.with_shell("light -U 2")
+        end
+    ),
+    awful.key({}, "XF86MonBrightnessUp",
+        function()
+            awful.spawn.with_shell("light -A 2")
+        end
+    )
 )
 
 bindings.clientkeys = gears.table.join(
