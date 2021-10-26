@@ -54,7 +54,7 @@ Plug 'ianding1/leetcode.vim'
 
 call plug#end()
 
-# Theme
+" Theme
 
 silent! colorscheme gruvbox
 set background=dark
