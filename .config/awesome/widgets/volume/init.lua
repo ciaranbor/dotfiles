@@ -37,10 +37,17 @@ function volume.toggle()
     exec_cmd_and_update('amixer sset Master toggle')
 end
 
-function volume.raise()
+function volume.raise_coarse()
+    exec_cmd_and_update('amixer sset Master 5%+')
+end
+function volume.lower_coarse()
+    exec_cmd_and_update('amixer sset Master 5%-')
+end
+
+function volume.raise_fine()
     exec_cmd_and_update('amixer sset Master 1%+')
 end
-function volume.lower()
+function volume.lower_fine()
     exec_cmd_and_update('amixer sset Master 1%-')
 end
 

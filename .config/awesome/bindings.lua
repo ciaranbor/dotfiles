@@ -143,26 +143,51 @@ bindings.globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Volume Keys
-    awful.key({}, "XF86AudioLowerVolume", volume.lower),
-    awful.key({}, "XF86AudioRaiseVolume", volume.raise),
-    awful.key({}, "XF86AudioMute", volume.toggle),
+    awful.key({}, "XF86AudioMute", volume.toggle,
+              {description = "toggle volume mute", group = "media"}),
+    awful.key({}, "XF86AudioLowerVolume", volume.lower_coarse,
+              {description = "lower volume (coarse)", group = "media"}),
+    awful.key({}, "XF86AudioRaiseVolume", volume.raise_coarse,
+              {description = "raise volume (coarse)", group = "media"}),
+    awful.key({ "Control" }, "XF86AudioLowerVolume", volume.lower_fine,
+              {description = "lower volume (fine)", group = "media"}),
+    awful.key({ "Control" }, "XF86AudioRaiseVolume", volume.raise_fine,
+              {description = "raise volume (fine)", group = "media"}),
 
     -- Media Keys
-    awful.key({}, "XF86AudioPlay", media.toggle),
-    awful.key({}, "XF86AudioStop", media.stop),
-    awful.key({}, "XF86AudioNext", media.next),
-    awful.key({}, "XF86AudioPrev", media.previous),
+    awful.key({}, "XF86AudioPlay", media.toggle,
+              {description = "toggle media player play/pause", group = "media"}),
+    awful.key({}, "XF86AudioStop", media.stop,
+              {description = "stop media player", group = "media"}),
+    awful.key({}, "XF86AudioNext", media.next,
+              {description = "play next media", group = "media"}),
+    awful.key({}, "XF86AudioPrev", media.previous,
+              {description = "play previous media", group = "media"}),
 
     -- Brightness Keys
     awful.key({}, "XF86MonBrightnessDown",
         function()
-            awful.spawn.with_shell("light -U 2")
-        end
+            awful.spawn.with_shell("light -U 5")
+        end,
+        {description = "lower screen brightness (coarse)", group = "hardware"}
     ),
     awful.key({}, "XF86MonBrightnessUp",
         function()
-            awful.spawn.with_shell("light -A 2")
-        end
+            awful.spawn.with_shell("light -A 5")
+        end,
+        {description = "raise screen brightness (coarse)", group = "hardware"}
+    ),
+    awful.key({ "Control" }, "XF86MonBrightnessDown",
+        function()
+            awful.spawn.with_shell("light -U 1")
+        end,
+        {description = "lower screen brightness (fine)", group = "hardware"}
+    ),
+    awful.key({ "Control" }, "XF86MonBrightnessUp",
+        function()
+            awful.spawn.with_shell("light -A 1")
+        end,
+        {description = "raise screen brightness (fine)", group = "hardware"}
     )
 )
 
