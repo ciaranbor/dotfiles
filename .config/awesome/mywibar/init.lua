@@ -7,6 +7,7 @@ local utils = require("utils")
 
 local mytextclock = require("widgets.clock")
 local volume = require("widgets.volume")
+local battery = require("widgets.battery")
 local media = require("widgets.media")
 local net_widget = require("widgets.net")
 local mylauncher = require("mywibar.launcher")
@@ -141,6 +142,20 @@ function mywibar.init(tags)
                     },
                     {
                         volume.image,
+                        color = beautiful.bg_focus,
+                        shape = utils.shape.parallelogram.right,
+                        margin = beautiful.gap,
+                    }
+                },
+                -- Battery Indicator 
+                utils.widget.compose{
+                    {
+                        battery.text,
+                        color = beautiful.fg_normal,
+                        shape = utils.shape.parallelogram.right
+                    },
+                    {
+                        battery.image,
                         color = beautiful.bg_focus,
                         shape = utils.shape.parallelogram.right,
                         margin = beautiful.gap,

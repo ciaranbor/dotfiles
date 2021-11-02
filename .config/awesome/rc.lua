@@ -27,11 +27,13 @@ editor_cmd = terminal .. " -e " .. editor
 
 -- Widgets
 local volume     = require("widgets.volume")
+local battery = require("widgets.battery")
 local media     = require("widgets.media")
 local net_widget = require("widgets.net")
 local mymainmenu = require("widgets.menu")
 
 volume.init()
+battery.init()
 media.init()
 net_widget.init()
 mymainmenu.init()
