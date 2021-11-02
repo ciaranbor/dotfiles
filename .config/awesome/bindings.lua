@@ -82,8 +82,10 @@ bindings.globalkeys = gears.table.join(
               {description = "open a secondary browser window", group = "launcher"}),
     awful.key({ bindings.modkey,           }, "g", apps.steam,
               {description = "launch steam", group = "launcher"}),
-    awful.key({ bindings.modkey,           }, "v", apps.media,
-              {description = "launch media programs", group = "launcher"}),
+    awful.key({ bindings.modkey,           }, "v", apps.local_video,
+              {description = "launch local video player", group = "launcher"}),
+    awful.key({ bindings.modkey, "Shift"   }, "v", apps.online_video,
+              {description = "launch video program", group = "launcher"}),
     awful.key({ bindings.modkey, "Shift"   }, "s", apps.social,
               {description = "launch social programs", group = "launcher"}),
 

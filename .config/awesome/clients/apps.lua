@@ -21,8 +21,11 @@ apps.social = function ()
     awful.spawn("element-desktop", { tag = tags[5] })
 end
 
-apps.media = function ()
+apps.local_video= function ()
     awful.spawn("vlc", { tag = tags[4] })
+end
+
+apps.online_video= function ()
     awful.spawn("freetube", { tag = tags[4] })
 end
 
