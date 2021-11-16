@@ -114,7 +114,11 @@ export VISUAL='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shut="shutdown now"
-alias dfgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Functions
+dfgit() {
+    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
+}
 
 export TERM="xterm-256color"
 export LANG="en_IE.UTF-8"
