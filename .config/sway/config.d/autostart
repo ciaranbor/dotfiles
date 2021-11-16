@@ -1,0 +1,13 @@
+# autostart applications
+
+exec autotiling
+exec_always nm-applet
+exec protonvpn-cli c -f -p udp
+exec swaymsg "exec protonvpn;"
+
+# exec swaymsg "workspace 3; exec steam;"
+
+exec swaymsg "workspace 5; exec $social; exec $social2"
+
+# land on first worspace after login
+exec swaymsg "workspace 1;"

@@ -31,6 +31,7 @@ c.qt.args += [
     "enable-gpu-rasterization",
     "blink-settings=preferredColorScheme=1",
 ]
+c.qt.highdpi = True
 
 # privacy
 c.content.cookies.accept = "no-3rdparty"

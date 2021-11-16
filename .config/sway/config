@@ -1,0 +1,9 @@
+set $menu bemenu-run -w \
+    | xargs swaymsg exec --
+
+bar {
+    swaybar_command waybar
+}
+
+include ~/.config/sway/config.d/*
+include /etc/sway/config.d/*

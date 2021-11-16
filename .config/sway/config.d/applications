@@ -1,0 +1,22 @@
+# preferred applications
+set $term kitty
+set $browser qutebrowser
+set $browser2 firefox
+set $media vlc
+set $social signal-desktop
+set $social2 element-desktop
+set $social3 jitsi-meet-desktop
+
+# assign workspaces
+assign [class="Steam"] workspace 3
+assign [class="steam_app"] workspace 3
+
+assign [class="FreeTube"] workspace 4
+assign [class="vlc"] workspace 4
+
+assign [class="Signal"] workspace 5
+assign [class="Element"] workspace 5
+assign [class="Jitsi Meet"] workspace 5
+
+# tag xwayland windows
+for_window [shell="xwayland"] title_format"<span>[X] %title</span>"

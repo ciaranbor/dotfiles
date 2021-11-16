@@ -1,0 +1,292 @@
+@keyframes blink-warning {
+    70% {
+        color: @light;
+    }
+
+    to {
+        color: @light;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: @light;
+    }
+
+    to {
+        color: @light;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Styles
+ * -------------------------------------------------------------------------- */
+
+/* COLORS */
+
+/* Gruvbox Dark */
+
+/*@define-color bg #353C4A;*/
+@define-color light #D8DEE9;
+/*@define-color dark @nord_dark_font;*/
+@define-color warning #ebcb8b;
+@define-color focused #98971a;
+/*@define-color critical #BF616A;*/
+/*@define-color mode @bg;*/
+/*@define-color workspaces @bg;*/
+/*@define-color workspaces @nord_dark_font;*/
+/*@define-color workspacesfocused #655b53;*/
+/*@define-color tray @bg;*/
+/*@define-color workspacesfocused #4C566A;
+@define-color tray @workspacesfocused;
+@define-color sound #EBCB8B;
+@define-color network #5D7096;
+@define-color memory #546484;
+@define-color cpu #596A8D;
+@define-color temp #4D5C78;
+@define-color layout #5e81ac;
+@define-color battery #88c0d0;
+@define-color date #434C5E;
+@define-color time #434C5E;
+@define-color backlight #434C5E;*/
+@define-color nord_bg #282828;
+@define-color nord_bg_blue @bg;
+@define-color nord_light #D8DEE9;
+
+@define-color nord_dark_font #272727;
+
+
+@define-color bg #282828;
+@define-color critical #BF616A;
+@define-color tray @bg;
+@define-color mode @bg;
+
+@define-color greentint #98971a;
+@define-color yellowtint #d79921;
+@define-color redtint #cc241d;
+@define-color orangetint #d65d0e;
+@define-color aquatint #689d6a;
+@define-color bluetint #448488;
+@define-color bluelight #83a597;
+@define-color magenta-dark #b16185;
+
+
+@define-color font_gruv_normal #ebdbb2;
+@define-color font_gruv_faded #a89985;
+@define-color font_gruv_darker #D8DEE9;
+@define-color font_dark_alternative #655b53;
+
+@define-color tray1bg @yellowtint;
+@define-color tray2bg @orangetint;
+@define-color tray3bg @font_dark_alternative;
+@define-color tray4bg #32302f;
+
+* {
+    border: none;
+    border-radius: 0px;
+    /* `otf-font-awesome` is required to be installed for icons */
+    min-height: 0;
+}
+
+/* The whole bar */
+#waybar {
+    background: @bg;
+    color: @light;
+    font-family: "MesloLGS NF", "Font Awesome 5";
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/* Each module */
+#battery,
+#clock,
+#cpu,
+#custom-layout,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#custom-playerctl,
+#tray,
+#backlight,
+#language,
+#bluetooth {
+/*    padding-left: 0.3em;
+    padding-right: 0.3em;*/
+    padding: 0.6em 0.8em;
+}
+
+/* Each module that should blink */
+#mode,
+#memory,
+#temperature,
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical {
+    color: @critical;
+}
+
+/* Each critical that should blink */
+#mode,
+#memory.critical,
+#temperature.critical,
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning {
+    color: @nord_dark_font;
+}
+
+/* Each warning that should blink */
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#custom-arrow1 {
+    font-size: 2.12em;
+    color: @font_gruv_normal;
+    background: @bg;
+}
+#custom-arrow2 {
+    font-size: 2.12em;
+    color: @tray1bg;
+    background: @bg;
+}
+#custom-arrow3 {
+    font-size: 2.12em;
+    color: @tray2bg;
+    background: @tray1bg;
+}
+#custom-arrow4 {
+    font-size: 2.12em;
+    color: @tray3bg;
+    background: @tray2bg;
+}
+#custom-arrow5 {
+    font-size: 2.12em;
+    color: @tray4bg;
+    background: @tray3bg;
+}
+
+/* And now modules themselves in their respective order */
+#clock.time {
+    background: @tray4bg;
+    color: @font_gruv_normal;
+}
+#clock.date {
+    background: @tray4bg;
+    color: @font_gruv_faded;
+}
+#language {
+    background: @tray3bg;
+    color: @font_gruv_normal;
+}
+#idle_inhibitor {
+    background: @font_dark_alternative;
+    color: @font_gruv_normal;
+}
+#custom-playerctl {
+    font-size: 0.9em;
+    color: @font_gruv_normal;
+}
+#custom-playerctl.paused{
+    color: @font_dark_alternative;
+    font-size: 0.9em;
+}
+/* Workspaces stuff */
+#workspaces {
+}
+#workspaces button {
+    background: @font_gruv_normal;
+    padding: 0em 1.2em;
+    color: @font_dark_alternative;
+    min-width: 0em;
+}
+#workspaces button.focused {
+    color: @yellowtint;
+    font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
+}
+#workspaces button.urgent {
+    color: @redtint;
+    opacity: 1;
+}
+#cpu {
+    background: @tray2bg;
+    color: @font_gruv_normal;
+    padding-left: 0em;
+    padding-right: 0.2em;
+}
+#cpu.critical {
+    color: @nord_dark_font;
+    background: @critical;
+}
+#temperature {
+    background-color: @tray2bg;
+    color: @font_gruv_normal;
+    padding-right: 0em;
+}
+#temperature.critical {
+    background:  @critical;
+}
+#pulseaudio {
+    background: @tray3bg;
+    color: @font_gruv_normal;
+}
+#pulseaudio.muted {
+    color: #fb4833;
+}
+#pulseaudio.source-muted {
+    /* moved to config */
+}
+#bluetooth {
+    background: @tray3bg;
+    color: @font_gruv_normal;
+}
+#network {
+    background: @tray3bg;
+    color: @font_gruv_normal;
+}
+#tray {
+    background: @tray4bg;
+    color: @font_gruv_normal;
+}
+#memory {
+    background-color: @tray2bg;
+}
+#custom-layout {
+    background: @layout;
+}
+#mode { /* Shown current Sway mode (resize etc.) */
+    color: @light;
+    background: @mode;
+}
+#battery {
+    background-color: @tray1bg;
+}
+
+#backlight {
+    background: @backlight;
+}
+#window {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: normal;
+}
