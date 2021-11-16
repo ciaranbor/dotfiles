@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
+Plug 'mi544/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'leafgarland/typescript-vim'
