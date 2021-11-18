@@ -4,7 +4,7 @@ output "Dell Inc. S2719DGF 2ZJZ4V2" {
 }
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallpapers/gruvbox/board.jpg fill
+output * bg ~/Pictures/wallpapers/gruvbox/chinese-hills.jpg fill
 
 ### Idle configuration
 # This will lock your screen after 300 seconds of inactivity, then turn off
