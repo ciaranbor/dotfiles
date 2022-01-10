@@ -203,4 +203,4 @@ bindsym Control+Print exec swaymsg 'exec pushd ~/Pictures && grim -g "$(slurp)"'
 
 bindsym mod4+Print exec swaymsg 'exec pushd ~/Videos && wf-recorder -a -f recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")'
 bindsym mod4+Control+Print exec swaymsg 'exec pushd ~/Videos && wf-recorder -a -g "$(slurp)" -f recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")'
-bindsym $mod+Shift+BackSpace exec killall -s SIGINT wf-recorder
+bindsym mod4+Shift+BackSpace exec killall -s SIGINT wf-recorder
