@@ -76,6 +76,8 @@ input type:touchpad {
 # Workspaces:
 #
     bindsym $mod+tab workspace back_and_forth
+    bindsym Control+Right workspace next 
+    bindsym Control+Left workspace next 
 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
@@ -188,9 +190,11 @@ bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser2 
 
 bindsym $mod+g exec "steam"
+bindsym $mod+Shift+g exec swaymsg "exec QT_QPA_PLATFORM=xcb yuzu;"
 
 bindsym $mod+v exec "vlc"
 bindsym $mod+Shift+v exec "freetube"
+bindsym $mod+Shift+M exec "kodi --windowing=x11"
 
 bindsym $mod+s exec swaymsg "exec signal-desktop; exec element-desktop;"
 bindsym $mod+Shift+s exec "jitsi-meet-desktop"
@@ -203,4 +207,5 @@ bindsym Control+Print exec swaymsg 'exec pushd ~/Pictures && grim -g "$(slurp)"'
 
 bindsym mod4+Print exec swaymsg 'exec pushd ~/Videos && wf-recorder -a -f recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")'
 bindsym mod4+Control+Print exec swaymsg 'exec pushd ~/Videos && wf-recorder -a -g "$(slurp)" -f recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")'
+bindsym mod4+Control+s exec swaymsg 'exec wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video0 -x yuv420p'
 bindsym mod4+Shift+BackSpace exec killall -s SIGINT wf-recorder
