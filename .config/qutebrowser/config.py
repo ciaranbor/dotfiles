@@ -52,7 +52,7 @@ c.content.blocking.adblock.lists = [
 
 c.url.default_page = "~/.config/qutebrowser/blank.html"
 c.url.start_pages = ["~/.config/qutebrowser/blank.html"]
-c.url.searchengines = {"DEFAULT": "https:/lite.duckduckgo.com/lite/?q={}"}
+c.url.searchengines = {"DEFAULT": "https:/duckduckgo.com/?q={}"}
 
 # per-domain settings
 
