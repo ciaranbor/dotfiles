@@ -86,7 +86,8 @@ let g:netrw_winsize = 25
 
 let mapleader = " "
 nnoremap <Leader>u :UndotreeShow<CR>
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>f :GFiles<CR>
+nnoremap <Leader>F :Files<CR>
 nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gd :Git diff %<CR>
 nnoremap <Leader>ga :Git add %<CR>
