@@ -6,13 +6,16 @@ output "Dell Inc. S2719DGF 2ZJZ4V2" {
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/Pictures/wallpapers/gruvbox/chinese-hills.jpg fill
 
+bindswitch lid:on swaylock -f -c "$unfocused"
+bindswitch lid:off exec protonvpn-cli c -f -p udp
+
 ### Idle configuration
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 #exec swayidle -w \
-#         timeout 300 'swaylock -f -c $unfocused' \
+#         timeout 600 'swaylock -f -c "$unfocused"' \
 #         timeout 600 'swaymsg "output * dpms off"' \
 #         resume 'swaymsg "output * dpms on"' \
-#         before-sleep 'swaylock -f -c $unfocused'
+#         before-sleep 'swaylock -f -c "$unfocused"'
 
