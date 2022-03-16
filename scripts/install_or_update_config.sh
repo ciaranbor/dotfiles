@@ -74,4 +74,12 @@ else
     popd
 fi
 
+#
+# Qutebrowser
+#
+/usr/share/qutebrowser/scripts/dictcli.py install en-GB
+
+#
+# Done
+#
 echo -e "${GREEN}Configuration complete.${NC}"
