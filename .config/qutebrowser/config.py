@@ -42,6 +42,7 @@ c.content.javascript.can_access_clipboard = False
 c.content.notifications.enabled = False 
 c.content.canvas_reading = False
 
+c.content.blocking.method = "both"
 c.content.blocking.enabled = True
 c.content.blocking.adblock.lists = [
     "https://easylist.to/easylist/easylist.txt",
@@ -52,7 +53,7 @@ c.content.blocking.adblock.lists = [
 
 c.url.default_page = "~/.config/qutebrowser/blank.html"
 c.url.start_pages = ["~/.config/qutebrowser/blank.html"]
-c.url.searchengines = {"DEFAULT": "https:/duckduckgo.com/?q={}"}
+c.url.searchengines = {"DEFAULT": "https:/duckduckgo.com/?q={} -site:cplusplus.com"}
 
 # per-domain settings
 
