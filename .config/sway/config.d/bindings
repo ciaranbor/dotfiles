@@ -181,7 +181,7 @@ bindsym --locked Control+XF86MonBrightnessUp exec light -A 0.2
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
-bindsym --locked XF86Search exec bemenu-run
+bindsym --locked XF86Search exec $menu
 
 #
 # Application macros

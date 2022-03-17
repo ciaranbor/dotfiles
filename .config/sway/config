@@ -1,4 +1,4 @@
-set $menu bemenu-run -w \
+set $menu wofi --show run \
     | xargs swaymsg exec --
 
 bar {
