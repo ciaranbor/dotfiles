@@ -27,6 +27,9 @@ set shortmess+=c
 
 set viminfo='20,<1000,s1000
 
+" language specific settings
+au Filetype yaml set tabstop=2 softtabstop=2 shiftwidth=2
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
