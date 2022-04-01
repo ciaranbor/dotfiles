@@ -15,7 +15,7 @@ input * {
     xkb_model "pc105"
     repeat_delay 200
     repeat_rate 25
-    scroll_factor 4
+    scroll_factor 1 
 }
 
 input type:touchpad {
@@ -188,6 +188,7 @@ bindsym --locked XF86Search exec $menu
 #
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser2 
+bindsym $mod+p exec $browser2 --private-window
 
 bindsym $mod+g exec "steam"
 bindsym $mod+Shift+g exec swaymsg "exec QT_QPA_PLATFORM=xcb yuzu;"
