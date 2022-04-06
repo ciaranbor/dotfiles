@@ -3,3 +3,8 @@ run-always_parse_args=true
 hide_scroll=true
 insensitive=true
 prompt=
+lines=5
+columns=1
+width=254px
+location=top
+

@@ -1,18 +1,27 @@
+window {
+    margin: 0px;
+    border: 0px;
+    font-family: "MesloLGS NF", "Font Awesome 5";
+}
+
 #input {
-    background-color: #282828;
-    border: 1px solid #dfbf8e;
+    background-color: #665c54;
+    border: 0px solid #dfbf8e;
     border-radius: 0;
     color: #dfbf8e;
 }
 
 #scroll {
-    background-color: #282828;
-    border: 1px solid #dfbf8e;
+    border: 0px;
     border-top-width: 0;
-    color: #dfbf8e;
+    color: #7daea3;
+}
+
+#text {
+    margin: 3px;
 }
 
 #entry:selected {
-    background-color: #dfbf8e;
-    color: #282828;
+    background-color: #a9b665;
+    color: #89b482;
 }
