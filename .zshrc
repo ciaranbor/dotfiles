@@ -114,6 +114,7 @@ export VISUAL='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias shut="shutdown now"
+alias ta="tmux attach"
 
 # Functions
 dfgit() {
