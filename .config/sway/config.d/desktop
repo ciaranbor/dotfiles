@@ -3,6 +3,12 @@ output "Dell Inc. S2719DGF 2ZJZ4V2" {
     adaptive_sync on
 }
 
+output "Samsung Electric Company LU28R55 H4ZR901566" {
+    mode 3840x2160@60Hz
+    adaptive_sync on
+    scale 1.5
+}
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 set $wallpapers_path ~/Pictures/wallpapers/gruvbox
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill

@@ -5,6 +5,7 @@ exec_always nm-applet
 exec protonvpn-cli c -f -p udp
 exec swaymsg "exec protonvpn;"
 exec libinput-gestures-setup start
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # exec swaymsg "workspace 3; exec steam;"
 
