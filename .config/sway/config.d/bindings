@@ -205,7 +205,7 @@ bindsym $mod+Shift+s exec "jitsi-meet-desktop"
 #
 # Capture
 #
-bindsym Print exec swaymsg "exec pushd ~/Pictures && grim"
+bindsym Print exec swaymsg 'exec pushd ~/Pictures && grim -o $(swaymsg -t get_outputs | jq -r ".[] | select(.focused) | .name")'
 bindsym Control+Print exec swaymsg 'exec pushd ~/Pictures && grim -g "$(slurp)"'
 
 bindsym mod4+Print exec swaymsg 'exec pushd ~/Videos && wf-recorder -a -f recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4")'
