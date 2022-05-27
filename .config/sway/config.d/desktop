@@ -9,6 +9,10 @@ output "Samsung Electric Company LU28R55 H4ZR901566" {
     scale 1.5
 }
 
+output DP-1 {
+    pos 0 0
+}
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 set $wallpapers_path ~/Pictures/wallpapers/gruvbox
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
