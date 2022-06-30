@@ -55,6 +55,7 @@ Plug 'kjwon15/vim-transparent'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'lervag/vimtex'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
@@ -209,3 +210,14 @@ nnoremap <leader>li :LeetCodeSignIn<cr>
 let g:leetcode_solution_filetype = 'cpp'
 let g:leetcode_browser = 'firefox'
 let g:leetcode_hide_paid_only = 1
+
+" Syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
