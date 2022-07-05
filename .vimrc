@@ -29,6 +29,7 @@ set viminfo='20,<1000,s1000
 
 " language specific settings
 au Filetype yaml set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.metal set filetype=cpp
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -178,7 +179,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>jF  <Plug>(coc-fix-current)
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', 'coc-fzf-preview', 'coc-git', 'coc-go', 'coc-markdownlint', 'coc-python', 'coc-sh', 'coc-texlab', 'coc-yaml', 'coc-java']
+let g:coc_global_extensions = ['coc-clangd', 'coc-cmake', 'coc-fzf-preview', 'coc-git', 'coc-go', 'coc-markdownlint', 'coc-python', 'coc-sh', 'coc-texlab', 'coc-yaml', 'coc-java', 'coc-json']
 
 " VimTex
 
