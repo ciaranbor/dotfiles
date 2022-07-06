@@ -18,7 +18,7 @@ set $wallpapers_path ~/Pictures/wallpapers/gruvbox
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 bindswitch lid:on swaylock -f -c "$unfocused"
-bindswitch lid:off exec protonvpn-cli c -f -p udp
+bindswitch lid:off exec protonvpn-cli d && protonvpn-cli c -f -p udp
 
 ### Idle configuration
 # This will lock your screen after 300 seconds of inactivity, then turn off
