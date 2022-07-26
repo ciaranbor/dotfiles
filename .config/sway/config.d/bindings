@@ -192,7 +192,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser2 
 bindsym $mod+p exec $browser2 --private-window
 
-bindsym $mod+g exec "steam"
+bindsym $mod+g exec "steam -pipewire"
 bindsym $mod+Shift+g exec swaymsg "exec QT_QPA_PLATFORM=xcb yuzu;"
 
 bindsym $mod+v exec "vlc"
