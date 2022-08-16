@@ -8,7 +8,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set textwidth=80
+" set textwidth=80
 
 set noswapfile
 set nobackup
@@ -56,7 +56,7 @@ Plug 'kjwon15/vim-transparent'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'lervag/vimtex'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'keith/swift.vim'
 
 call plug#end()
@@ -215,13 +215,13 @@ let g:leetcode_hide_paid_only = 1
 
 " Syntastic
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_swift_swiftlint_use_defaults = 1
-let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_swift_swiftlint_use_defaults = 1
+" let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm']
