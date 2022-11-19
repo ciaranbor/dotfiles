@@ -84,6 +84,7 @@
     border-radius: 0px;
     /* `otf-font-awesome` is required to be installed for icons */
     min-height: 0;
+    padding: 0px;
 }
 
 /* The whole bar */
