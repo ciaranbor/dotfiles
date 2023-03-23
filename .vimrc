@@ -41,7 +41,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
-Plug 'mi544/vim-ripgrep'
+Plug 'kyoh86/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'wellle/context.vim'
@@ -84,6 +84,8 @@ let g:lightline = {
 if executable('rg')
     let g:rg_derive_root='true'
 endif
+
+command! -nargs=+ -complete=file Rg :call ripgrep#search(<q-args>)
 
 " Git Fugitive 
 
