@@ -1,0 +1,32 @@
+return {
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ensure_installed = {
+                "bash-language-server",
+                "clang-format",
+                "clangd",
+                "cmake-language-server",
+                "cmakelang",
+                "cmakelint",
+                "codespell",
+                "commitlint",
+                "cpplint",
+                "cpptools",
+                "gitlint",
+                "json-lsp",
+                "lua-language-server",
+                "markdown-toc",
+                "markdownlint",
+                "pylint",
+                "python-lsp-server",
+                "shfmt",
+                "stylua",
+                "yaml-language-server",
+                "yamlfmt",
+                "yamllint",
+                "yapf",
+            },
+        },
+    },
+}
