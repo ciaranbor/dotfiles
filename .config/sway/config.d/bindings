@@ -189,10 +189,11 @@ bindsym --locked $mod+Control+Down exec pactl set-sink-volume @DEFAULT_SINK@ -1%
 # Application macros
 #
 bindsym $mod+b exec $browser
-bindsym $mod+Shift+b exec $browser2 
+bindsym $mod+Shift+b exec swaymsg "exec MOZ_ENABLE_WAYLAND=1 firefox;"
 bindsym $mod+p exec $browser2 --private-window
+bindsym $mod+t exec swaymsg "exec ~/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/start-tor-browser --detach thepiratebay.org"
 
-bindsym $mod+g exec "steam -pipewire"
+bindsym $mod+g exec "steam"
 bindsym $mod+Shift+g exec swaymsg "exec QT_QPA_PLATFORM=xcb yuzu;"
 
 bindsym $mod+v exec "vlc"
