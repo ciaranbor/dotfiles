@@ -18,6 +18,9 @@ export ZSH="${HOME}/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+PURE_POWER_MODE=modern
+source ${HOME}/.zsh-theme/gruvbox-material-dark.zsh
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
