@@ -1,7 +1,7 @@
 return {
     -- add gruvbox
     {
-        "ellisonleao/gruvbox.nvim",
+        "sainnhe/gruvbox-material",
         lazy = false,
         priority = 1000,
     },
@@ -9,7 +9,7 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "gruvbox",
+            colorscheme = "gruvbox-material",
         },
     },
 }
