@@ -1,4 +1,4 @@
-set $menu wofi --show run \
+set $menu wofi --show drun \
     | xargs swaymsg exec --
 
 bar {

@@ -3,7 +3,6 @@
 exec autotiling
 exec_always nm-applet
 exec libinput-gestures-setup start
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec swaymsg "exec protonvpn"
 exec protonvpn-cli d
