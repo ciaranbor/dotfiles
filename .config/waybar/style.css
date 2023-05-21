@@ -166,7 +166,7 @@
 
 #custom-arrow1 {
     font-size: 2.12em;
-    color: @font_normal;
+    color: @fg0;
     background: @bg0;
 }
 #custom-arrow2 {
