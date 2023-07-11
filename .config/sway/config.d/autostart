@@ -4,7 +4,7 @@ exec autotiling
 exec dunst
 exec_always nm-applet
 exec libinput-gestures-setup start
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-kde/polkit-gnome-authentication-agent-1
 exec swaymsg "exec protonvpn"
 exec protonvpn-cli d
 exec protonvpn-cli c -f -p udp
