@@ -4,6 +4,7 @@ import html
 import json
 import gi
 import sys
+import subprocess
 gi.require_version('Playerctl', '2.0')
 from gi.repository import Playerctl, GLib  # noqa: E402
 
@@ -60,7 +61,7 @@ def get_status(manager, vanished_player):
         icon = ICONS['paused']
     else:
         # Added override for icon
-        #icon = ICONS.get(name, ICONS['default'])
+        # icon = ICONS.get(name, ICONS['default'])
         icon = ICONS['default']
     if title is None or title == '':
         song = artist or name.title()
@@ -80,6 +81,8 @@ def print_status(manager, vanished_player=None):
         print(status)
         sys.stdout.flush()
         last_status = status
+        subprocess.run(["notify-send", "--urgency=low",
+                       "-h", "string:x-canonical-private-synchronous:audio", f'{text}'])
 
 
 def on_playback_status(player, status, manager):

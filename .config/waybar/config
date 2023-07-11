@@ -7,15 +7,16 @@
     "modules-left": [
         "sway/mode",
         "sway/workspaces",
-        "custom/arrow1"
+        "custom/arrow1",
+        "custom/playerctl"
     ],
     "modules-center": ["sway/window"],
     "modules-right": [
-        //"custom/playerctl",
         "custom/arrow2", "battery",
         "custom/arrow3", "temperature", "cpu", "memory",
         "custom/arrow4", "network", "pulseaudio", "bluetooth", "sway/language",
-        "custom/arrow5", "clock#date", "clock#time", "tray"],
+        "custom/arrow5", "clock#date", "clock#time", "tray"
+    ],
 
     // Modules configuration
     "sway/workspaces": {
@@ -147,7 +148,6 @@
         "on-click": "kitty -e bluetoothctl"
     },
     "custom/playerctl": {
-        "max-length": 30,
         "exec": "$HOME/.config/waybar/custom_modules/media_player_status.py",
         "return-type": "json",
         "on-click": "playerctl play-pause",
