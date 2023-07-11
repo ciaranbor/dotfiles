@@ -172,25 +172,25 @@ bindsym $mod+Shift+r mode "resize"
 #
 # Special keys
 # 
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked Control+XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym --locked Control+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym --locked XF86MonBrightnessDown exec light -U 5
-bindsym --locked XF86MonBrightnessUp exec light -A 5
-bindsym --locked Control+XF86MonBrightnessDown exec light -U 0.2
-bindsym --locked Control+XF86MonBrightnessUp exec light -A 0.2 
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ~/.config/dunst/notify audio
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/.config/dunst/notify audio
+bindsym --locked Control+XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ && ~/.config/dunst/notify audio
+bindsym --locked Control+XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && ~/.config/dunst/notify audio
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ~/.config/dunst/notify audio
+bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && ~/.config/dunst/notify audio
+bindsym --locked XF86MonBrightnessDown exec light -U 5 && ~/.config/dunst/notify brightness
+bindsym --locked XF86MonBrightnessUp exec light -A 5 && ~/.config/dunst/notify brightness
+bindsym --locked Control+XF86MonBrightnessDown exec light -U 0.2 && ~/.config/dunst/notify brightness
+bindsym --locked Control+XF86MonBrightnessUp exec light -A 0.2 && ~/.config/dunst/notify brightness
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86Search exec $menu
 
-bindsym --locked $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --locked $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked $mod+Control+Up exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym --locked $mod+Control+Down exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym --locked $mod+Up exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ~/.config/dunst/notify audio
+bindsym --locked $mod+Down exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/.config/dunst/notify audio
+bindsym --locked $mod+Control+Up exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ && ~/.config/dunst/notify audio
+bindsym --locked $mod+Control+Down exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && ~/.config/dunst/notify audio
 
 #
 # Application macros
@@ -200,7 +200,7 @@ bindsym $mod+Shift+b exec swaymsg "exec MOZ_ENABLE_WAYLAND=1 firefox;"
 bindsym $mod+p exec $browser2 --private-window
 bindsym $mod+t exec swaymsg "exec ~/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/start-tor-browser --detach thepiratebay.org"
 
-bindsym $mod+g exec "steam"
+bindsym $mod+g exec "steam -pipewire"
 bindsym $mod+Shift+g exec swaymsg "exec QT_QPA_PLATFORM=xcb yuzu;"
 
 bindsym $mod+v exec "vlc"

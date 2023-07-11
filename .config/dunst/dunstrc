@@ -1,0 +1,70 @@
+[global]
+monitor = 0
+follow = mouse
+origin = top-right
+offset = 20x20
+indicate_hidden = no
+shrink = no
+separator_height = 0
+separator_color = auto
+padding = 8 
+horizontal_padding = 8
+frame_width = 0
+gap_size = 10 
+sort = yes 
+idle_threshold = 120
+font = Noto Sans 12
+line_height = 0
+markup = full
+format = "<b>%s</b>\n%b"
+alignment = left
+show_age_threshold = 60
+word_wrap = yes
+ignore_newline = no 
+stack_duplicates = true 
+hide_duplicate_count = yes
+show_indicators = no
+icon_position = left
+max_icon_size = 48
+sticky_history = no
+history_length = 20
+browser = firefox
+always_run_script = true
+title = Dunst
+class = Dunst
+corner_radius = 0
+
+enable_recursive_icon_lookup = true
+icon_theme = Adwaita
+icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+
+mouse_left_click = close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click = context
+
+progress_bar = true
+progress_bar_frame_width = 0
+
+[experimental]
+per_monitor_dpi = true
+
+[urgency_low]
+timeout = 4
+background = "#D4BE98"
+foreground = "#282828"
+frame_color = "#D8A657"
+highlight = "#282828"
+
+[urgency_normal]
+timeout = 8
+background = "#D4BE98"
+foreground = "#282828"
+frame_color = "#D8A657"
+highlight = "#282828"
+
+[urgency_critical]
+timeout = 0
+background = "#D4BE98"
+foreground = "#EA6962"
+frame_color = "#D8A657"
+highlight = "#D4BE98"
