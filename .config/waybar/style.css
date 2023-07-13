@@ -212,7 +212,7 @@
     color: @font_dark_alternative;
     min-width: 0em;
 }
-#workspaces button.focused {
+#workspaces button.active {
     color: @orange;
     font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
 }
@@ -294,4 +294,7 @@
     margin-right: 10px;
     margin-left: 10px;
     font-weight: normal;
+}
+tooltip {
+    background-color: #32302f;
 }

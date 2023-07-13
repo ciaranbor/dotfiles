@@ -82,7 +82,8 @@ def print_status(manager, vanished_player=None):
         sys.stdout.flush()
         last_status = status
         subprocess.run(["notify-send", "--urgency=low",
-                       "-h", "string:x-canonical-private-synchronous:audio", f'{text}'])
+                       "-h", "string:x-canonical-private-synchronous:audio",
+                        f'{text}'])
 
 
 def on_playback_status(player, status, manager):

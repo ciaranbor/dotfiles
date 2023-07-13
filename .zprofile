@@ -5,6 +5,13 @@ fi
 
 export QT_QPA_PLATFORM=wayland
 
-if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-    exec sway
+if [ -z $DISPLAY ]; then
+    case $(tty) in
+        /dev/tty1)
+            exec sway
+            ;;
+        /dev/tty2)
+            exec Hyprland
+            ;;
+    esac
 fi
