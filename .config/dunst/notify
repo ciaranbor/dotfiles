@@ -39,13 +39,13 @@ notifyAudio() {
 notifyBrightness() {
 	brightness=$(light -G)
 	if [ $brightness -eq 0 ]; then
-		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Volume" -h int:value:"$brightness" -t 1500 --icon display-brightness-off-symbolic
+		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Brightness" -h int:value:"$brightness" -t 1500 --icon display-brightness-symbolic
 	elif [ $brightness -le 30 ]; then
-		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Volume" -h int:value:"$brightness" -t 1500 --icon display-brightness-low-symbolic
+		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Brightness" -h int:value:"$brightness" -t 1500 --icon display-brightness-symbolic
 	elif [ $brightness -le 70 ]; then
-		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Volume" -h int:value:"$brightness" -t 1500 --icon display-brightness-medium-symbolic
+		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Brightness" -h int:value:"$brightness" -t 1500 --icon display-brightness-symbolic
 	else
-		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Volume" -h int:value:"$brightness" -t 1500 --icon display-brightness-high-symbolic
+		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Brightness" -h int:value:"$brightness" -t 1500 --icon display-brightness-symbolic
 	fi
 }
 
