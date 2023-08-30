@@ -8,10 +8,10 @@ export QT_QPA_PLATFORM=wayland
 if [ -z $DISPLAY ]; then
     case $(tty) in
         /dev/tty1)
-            exec sway
+            exec Hyprland
             ;;
         /dev/tty2)
-            exec Hyprland
+            exec sway
             ;;
     esac
 fi
