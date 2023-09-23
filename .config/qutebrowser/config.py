@@ -1,4 +1,4 @@
-config.load_autoconfig(False)
+config.load_autoconfig(True)
 
 # ui
 config.source("gruvbox.py")
@@ -38,8 +38,8 @@ c.content.cookies.accept = "no-3rdparty"
 c.content.webrtc_ip_handling_policy = "default-public-interface-only"
 c.content.site_specific_quirks.enabled = False
 c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
-c.content.javascript.can_access_clipboard = False 
-c.content.notifications.enabled = False 
+c.content.javascript.clipboard = "none"
+c.content.notifications.enabled = False
 c.content.canvas_reading = False
 
 c.content.blocking.method = "both"
@@ -53,8 +53,10 @@ c.content.blocking.adblock.lists = [
 
 c.url.default_page = "~/.config/qutebrowser/blank.html"
 c.url.start_pages = ["~/.config/qutebrowser/blank.html"]
-c.url.searchengines = {"DEFAULT": "https:/duckduckgo.com/?q={} -site:cplusplus.com"}
+c.url.searchengines = {
+    "DEFAULT": "https:/duckduckgo.com/?q={} -site:cplusplus.com"}
 
 # per-domain settings
 
 # keys
+config.bind('<Ctrl+/>', 'hint links spawn --detach mpv {hint-url}')
