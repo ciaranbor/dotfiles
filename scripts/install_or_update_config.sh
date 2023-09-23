@@ -3,6 +3,21 @@
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
+SKIP_HYPRLAND=false
+
+while [[ $# -gt 0 ]]; do
+	case $1 in
+	--skip-hyprland)
+		SKIP_HYPRLAND=true
+		shift
+		;;
+	*)
+		echo "Unknow option: $1"
+		exit 1
+		;;
+	esac
+done
+
 #
 # zsh
 #
@@ -82,8 +97,11 @@ fi
 #
 # Hyprload
 #
-if [[ ! -d ~/.local/share/hyprload ]]; then
-	curl -sSL https://raw.githubusercontent.com/Duckonaut/hyprload/main/install.sh | bash
+
+if [ "$SKIP_HYPRLAND" = false ]; then
+	if [[ ! -d ~/.local/share/hyprload ]]; then
+		curl -sSL https://raw.githubusercontent.com/Duckonaut/hyprload/main/install.sh | bash
+	fi
 fi
 
 #
