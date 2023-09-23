@@ -8,6 +8,7 @@ return {
                 "c",
                 "cmake",
                 "cpp",
+                "jsonc",
                 "lua",
                 "markdown",
                 "markdown_inline",

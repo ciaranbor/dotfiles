@@ -1,6 +1,7 @@
 return {
     {
         "williamboman/mason.nvim",
+        lazy = true,
         opts = {
             ensure_installed = {
                 "autopep8",
