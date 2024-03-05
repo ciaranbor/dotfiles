@@ -37,7 +37,8 @@ notifyAudio() {
 }
 
 notifyBrightness() {
-	brightness=$(light -G)
+	brightness=$(brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}')
+
 	if [ $brightness -eq 0 ]; then
 		dunstify --urgency=low -h string:x-canonical-private-synchronous:brightness "Brightness" -h int:value:"$brightness" -t 1500 --icon display-brightness-symbolic
 	elif [ $brightness -le 30 ]; then
