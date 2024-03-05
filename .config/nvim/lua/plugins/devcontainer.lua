@@ -11,7 +11,7 @@ return {
             },
             {
                 "<leader>cca",
-                "<cmd>DevcontainerAttach<cr>",
+                "<cmd>DevcontainerAttach zsh<cr>",
                 desc = "Attach dev container",
             },
             {
@@ -71,9 +71,7 @@ return {
                 },
                 always_mount = {
                     "type=bind,source=/home/ciaran/.zshrc,target=/root/.zshrc",
-                    "type=bind,source=/home/ciaran/.oh-my-zsh,target=/root/.oh-my-zsh",
                     "type=bind,source=/home/ciaran/.tmux.conf,target=/root/.tmux.conf",
-                    "type=bind,source=/home/ciaran/.tmux,target=/root/.tmux",
                     "type=bind,source=/home/ciaran/.p10k.zsh,target=/root/.p10k.zsh",
                     "type=bind,source=/home/ciaran/scripts,target=/root/scripts",
                 },
