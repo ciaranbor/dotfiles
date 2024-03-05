@@ -1,0 +1,8 @@
+{
+    "tray_pinned_servers": [
+        "CH-UK#1",
+        "IS-UK#1",
+        "SE-UK#1"
+    ],
+    "connect_at_app_startup": "CH-UK#1"
+}
