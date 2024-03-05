@@ -10,8 +10,5 @@ if [ -z $DISPLAY ]; then
         /dev/tty1)
             exec Hyprland
             ;;
-        /dev/tty2)
-            exec sway
-            ;;
     esac
 fi
