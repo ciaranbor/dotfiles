@@ -12,7 +12,7 @@
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "custom/arrow2", "upower", "network", "pulseaudio",
-        "custom/arrow4", "cpu", "temperature", "memory",
+        "custom/arrow4", "cpu", "temperature", "memory", "disk",
         "custom/arrow5", "clock#date", "clock#time",
         "custom/arrow6", "tray"
     ],
@@ -74,7 +74,11 @@
     },
     "memory": {
         "format": " {}%",
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+        "on-click": "kitty -e htop --sort-key PERCENT_MEM"
+    },
+    "disk": {
+        "interval": 600,
+        "format": " {percentage_used}%"
     },
     "network": {
         "interface": "*s*", // (Optional) To force the use of this interface

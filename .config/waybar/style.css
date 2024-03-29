@@ -110,6 +110,7 @@
 #cpu,
 #custom-layout,
 #memory,
+#disk,
 #mode,
 #network,
 #pulseaudio,
@@ -127,6 +128,7 @@
 /* Each module that should blink */
 #mode,
 #memory,
+#disk,
 #temperature,
 #battery {
     animation-timing-function: linear;
@@ -272,6 +274,9 @@
     background:  @critical;
 }
 #memory {
+    background-color: @tray3bg;
+}
+#disk{
     background-color: @tray3bg;
 }
 #cpu {
