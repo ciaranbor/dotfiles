@@ -5,56 +5,23 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": [
-        "sway/mode",
-        "sway/workspaces",
         "hyprland/workspaces",
         "custom/arrow1",
         "custom/playerctl"
     ],
-    "modules-center": ["sway/window", "hyprland/window"],
+    "modules-center": ["hyprland/window"],
     "modules-right": [
-        "custom/arrow2", "battery",
-        "custom/arrow3", "temperature", "cpu", "memory",
-        "custom/arrow4", "network", "pulseaudio", "bluetooth", "sway/language",
-        "custom/arrow5", "clock#date", "clock#time", "tray"
+        "custom/arrow2", "upower", "network", "pulseaudio",
+        "custom/arrow4", "cpu", "temperature", "memory",
+        "custom/arrow5", "clock#date", "clock#time",
+        "custom/arrow6", "tray"
     ],
-
-    // Modules configuration
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "1": "Master ",
-            "2": "Browse ",
-            "3": "Game ",
-            "4": "Media ",
-            "5": "Social ",
-            "6": "Dev ",
-            "7": "",
-            "8": "",
-            "9": "",
-            "10": "",
-            "urgent": "",
-            "focused": "",
-            "persistent": "",
-            "default": ""
-        },
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-        }
-    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
         "format": "{name} {icon}",
         "format-icons": {
-            "1": "Master ",
+            "1": "General ",
             "2": "Browse ",
             "3": "Game ",
             "4": "Media ",
@@ -73,37 +40,86 @@
             "eDP-1": 6
         }
     },
-    "sway/language": {
-        "format": "{}"
-    },
-    "sway/window": {
-        "min-length": 30,
-        "max-length": 30
-    },
     "hyprland/window": {
         "min-length": 30,
         "max-length": 30
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+    "battery": {
+        "interval": 2,
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-icons": {
+            "discharging": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+        }
     },
-    "idle_inhibitor": {
+    "cpu": {
+        "interval": 5,
+        "format": " {usage:2}%",
+        "tooltip": false,
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+    },
+    "memory": {
+        "format": " {}%",
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+    },
+    "network": {
+        "interface": "*s*", // (Optional) To force the use of this interface
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": "󰈁",
+        "format-linked": "󰈁",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid}\n{ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
+        "tooltip-format-linked": "{ifname}\nNo IP ",
+        "tooltip-format-disconnected": "Disconnected\nNo IP ",
+        "format-icons": {
+            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        },
+        "on-click": "kitty -e nmtui"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}   {volume}%",
+        "format-bluetooth-muted": "{icon}  ",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "", "󰕾", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "bluetooth": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "enabled": "",  
+            "disabled": ""
         },
-        "tooltip": "true"
-    },
-    "clock#time": {
-        "interval": 10,
-        "format": " {:%H:%M}",
-        "tooltip": false
+        "tooltip-format": "{}",
+        "on-click": "blueman-manager"
     },
     "clock#date": {
         "interval": 20,
-        "format": " {:%a %d %b}",
+        "format": "  {:%a %d %b}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode"          : "month",
@@ -127,80 +143,33 @@
                     "on-scroll-down": "shift_down"
                     }
     },
-    "cpu": {
-        "interval": 5,
-        "format": " {usage:2}% ",
-        "tooltip": false,
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+    "clock#time": {
+        "interval": 10,
+        "format": "  {:%H:%M}",
+        "tooltip": false
     },
-    "memory": {
-        "format": "{}% ",
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+    "upower": {
+     "icon-size": 14,
+     "hide-if-empty": true,
+     "tooltip": true,
+     "tooltip-spacing": 20
+},
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
     },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""],
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": {
-            "discharging": ["", "", "", "", "", "", "", "", "", "", ""],
-            "charging": ["", "", "", "", "", "", ""],
-            "full": ""
-        }
-    },
-    "network": {
-        "interface": "*s*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "",
-        "format-linked": "",
-        "format-disconnected": "睊",
-        "tooltip-format-wifi": "{essid}\n{ipaddr}/{cidr}",
-        "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
-        "tooltip-format-linked": "{ifname}\nNo IP ",
-        "tooltip-format-disconnected": "Disconnected\nNo IP ",
-        "on-click": "kitty -e nmtui"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}%  {icon}",
-        "format-bluetooth-muted": "  {icon}",
-        "format-muted": "婢",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["奄", "", "墳", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "bluetooth": {
+    "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "enabled": "",  
-            "disabled": ""
+            "activated": "",
+            "deactivated": ""
         },
-        "tooltip-format": "{}",
-        "on-click": "kitty -e bluetoothctl"
+        "tooltip": "true"
     },
     "custom/playerctl": {
+        "max-length": 120,
+        "format": "{icon} {}",
+        "escape": true,
         "exec": "$HOME/.config/waybar/custom_modules/media_player_status.py",
         "return-type": "json",
         "on-click": "playerctl play-pause",
@@ -222,6 +191,10 @@
         "tooltip": false
     },
     "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow6": {
         "format": "",
         "tooltip": false
     }

@@ -80,15 +80,18 @@
 @define-color font_dark_alternative @bg3;
 
 @define-color tray1bg @yellow;
-@define-color tray2bg @orange;
-@define-color tray3bg @grey0;
-@define-color tray4bg @bg3;
+@define-color tray2bg @yellow;
+@define-color tray3bg @orange;
+@define-color tray4bg @grey0;
+@define-color tray5bg @bg3;
 
 * {
     border: none;
     border-radius: 0px;
     /* `otf-font-awesome` is required to be installed for icons */
     min-height: 0;
+    font-family: "MesloLGS Nerd Font", "Font Awesome 5";
+    margin: 0;
     padding: 0px;
 }
 
@@ -96,7 +99,6 @@
 #waybar {
     background: @bg0;
     color: @fg0;
-    font-family: "MesloLGS NF";
     font-size: 10pt;
     font-weight: bold;
     opacity: 0.9;
@@ -116,10 +118,10 @@
 #tray,
 #backlight,
 #language,
+#upower,
+#idle_inhibitor,
 #bluetooth {
-/*    padding-left: 0.3em;
-    padding-right: 0.3em;*/
-    padding: 0.6em 0.8em;
+    padding: 0.0em 0.6em;
 }
 
 /* Each module that should blink */
@@ -139,12 +141,19 @@
 #battery.critical {
     color: @critical;
 }
+#upower.critical {
+    color: @critical;
+}
 
 /* Each critical that should blink */
 #mode,
 #memory.critical,
 #temperature.critical,
 #battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+#upower.critical.discharging {
     animation-name: blink-critical;
     animation-duration: 2s;
 }
@@ -157,9 +166,17 @@
 #battery.warning {
     color: @bg_dim;
 }
+#upower.warning {
+    color: @bg_dim;
+}
 
 /* Each warning that should blink */
 #battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#upower.warning.discharging {
     animation-name: blink-warning;
     animation-duration: 3s;
 }
@@ -189,6 +206,11 @@
     color: @tray4bg;
     background: @tray3bg;
 }
+#custom-arrow6 {
+    font-size: 2.12em;
+    color: @tray5bg;
+    background: @tray4bg;
+}
 
 /* And now modules themselves in their respective order */
 #idle_inhibitor {
@@ -208,7 +230,7 @@
 }
 #workspaces button {
     background: @fg0;
-    padding: 0em 1.2em;
+    padding: 0em 1.1em;
     color: @font_dark_alternative;
     min-width: 0em;
 }
@@ -224,40 +246,41 @@
     color: @font_normal;
     background-color: @tray1bg;
 }
-#temperature {
-    background-color: @tray2bg;
-    color: @fg1;
-    padding-right: 0em;
-}
-#temperature.critical {
-    background:  @critical;
-}
-#memory {
-    background-color: @tray2bg;
-}
-#cpu {
-    background: @tray2bg;
-    color: @fg1;
-    padding-left: 0em;
-    padding-right: 0.2em;
-}
-#cpu.critical {
-    color: @bg_dim;
-    background: @critical;
+#upower{
+    color: @yellowfg;
+    background-color: @tray1bg;
 }
 #network {
-    background: @tray3bg;
-    color: @fg1;
+    background: @tray2bg;
+    color: @yellowfg;
 }
 #pulseaudio {
-    background: @tray3bg;
-    color: @fg1;
+    background: @tray2bg;
+    color: @yellowfg;
 }
 #pulseaudio.muted {
     color: @orange;
 }
 #pulseaudio.source-muted {
     /* moved to config */
+}
+#temperature {
+    background-color: @tray3bg;
+    color: @fg1;
+}
+#temperature.critical {
+    background:  @critical;
+}
+#memory {
+    background-color: @tray3bg;
+}
+#cpu {
+    background: @tray3bg;
+    color: @fg1;
+}
+#cpu.critical {
+    color: @bg_dim;
+    background: @critical;
 }
 #bluetooth {
     background: @tray3bg;
@@ -276,8 +299,7 @@
     color: @font_normal;
 }
 #tray {
-    background: @tray4bg;
-    color: @fg1;
+    background: @tray5bg;
 }
 #custom-layout {
     background: @bg3;
