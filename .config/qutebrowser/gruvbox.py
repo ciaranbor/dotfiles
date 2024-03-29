@@ -285,4 +285,4 @@ c.colors.webpage.bg = base00
 
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.threshold.background = 128
-c.colors.webpage.darkmode.threshold.text = 128
+c.colors.webpage.darkmode.threshold.foreground = 128
