@@ -1,14 +1,14 @@
-window {
+#window {
     margin: 0px;
     border: 0px;
-    font-family: "MesloLGS NF", "Font Awesome 5";
+    font-family: "MesloLGS Nerd Font", "Font Awesome 5";
 }
 
 #input {
-    background-color: #665c54;
+    background-color: #45403d;
     border: 0px solid #dfbf8e;
     border-radius: 0;
-    color: #dfbf8e;
+    color: #f4be98;
 }
 
 #scroll {
@@ -23,5 +23,5 @@ window {
 
 #entry:selected {
     background-color: #a9b665;
-    color: #89b482;
+    color: #45403d;
 }
