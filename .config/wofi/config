@@ -1,10 +1,11 @@
 mode=drun,run
 run-always_parse_args=true
-hide_scroll=true
+hide_scroll=false
 insensitive=true
 prompt=
-lines=5
 columns=1
-width=254px
-location=top
-
+width=360px
+location=center
+gtk_dark=true
+allow_images=true
+allow_markup=true
