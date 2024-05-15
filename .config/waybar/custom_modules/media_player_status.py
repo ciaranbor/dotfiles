@@ -6,10 +6,10 @@ import signal
 import sys
 import logging
 import argparse
-from gi.repository.Playerctl import Player
-from gi.repository import Playerctl, GLib
 import gi
 gi.require_version("Playerctl", "2.0")
+from gi.repository import Playerctl, GLib
+from gi.repository.Playerctl import Player
 
 logger = logging.getLogger(__name__)
 
