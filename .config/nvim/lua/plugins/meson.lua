@@ -20,8 +20,6 @@ return {
                 "isort",
                 "json-lsp",
                 "lua-language-server",
-                "markdown-toc",
-                "markdownlint",
                 "mypy",
                 "python-lsp-server",
                 "ruff",
