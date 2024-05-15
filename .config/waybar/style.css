@@ -1,24 +1,3 @@
-@keyframes blink-warning {
-    70% {
-        color: @fg0;
-    }
-
-    to {
-        color: @fg0;
-    }
-}
-
-@keyframes blink-critical {
-    70% {
-      color: @fg0;
-    }
-
-    to {
-        color: @fg0;
-    }
-}
-
-
 /* -----------------------------------------------------------------------------
  * Styles
  * -------------------------------------------------------------------------- */
@@ -36,6 +15,7 @@
 @define-color fg0 #d4be98;
 @define-color fg1 #ddc7a1;
 
+@define-color grey #928374;
 @define-color red #ea6962;
 @define-color orange #e78a4e;
 @define-color yellow #d8a657;
@@ -43,54 +23,13 @@
 @define-color aqua #89b482;
 @define-color blue #7daea3;
 @define-color purple #d3869b;
-@define-color grey0 #7c6f64;
-@define-color grey1 #928374;
-@define-color grey2 #a89984;
-@define-color yellowfg #4f422e;
-
-@define-color light @fg0;
-@define-color warning @red;
-@define-color focused @yellow;
-/*@define-color critical #BF616A;*/
-/*@define-color mode @bg;*/
-/*@define-color workspaces @bg;*/
-/*@define-color workspacesfocused #655b53;*/
-/*@define-color tray @bg;*/
-/*@define-color workspacesfocused #4C566A;
-@define-color tray @workspacesfocused;
-@define-color sound #EBCB8B;
-@define-color network #5D7096;
-@define-color memory #546484;
-@define-color cpu #596A8D;
-@define-color temp #4D5C78;
-@define-color layout #5e81ac;
-@define-color battery #88c0d0;
-@define-color date #434C5E;
-@define-color time #434C5E;
-@define-color backlight #434C5E;*/
-
-@define-color critical @red;
-@define-color tray @bg0;
-@define-color mode @bg1;
-
-
-@define-color font_normal @fg1;
-@define-color font_faded @grey2;
-@define-color font_darker @bg2;
-@define-color font_dark_alternative @bg3;
-
-@define-color tray1bg @yellow;
-@define-color tray2bg @yellow;
-@define-color tray3bg @orange;
-@define-color tray4bg @grey0;
-@define-color tray5bg @bg3;
 
 * {
     border: none;
     border-radius: 0px;
-    /* `otf-font-awesome` is required to be installed for icons */
     min-height: 0;
     font-family: "MesloLGS Nerd Font", "Font Awesome 5";
+    font-size: 11pt;
     margin: 0;
     padding: 0px;
 }
@@ -99,38 +38,83 @@
 #waybar {
     background: @bg0;
     color: @fg0;
-    font-size: 10pt;
-    font-weight: bold;
-    opacity: 0.9;
+}
+
+/* Workspaces stuff */
+
+#workspaces button {
+    background: @bg2;
+    padding: 0em 0.8em;
+    margin-right: 4px;
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+#workspaces button.active {
+    background: @fg0;
+    color: @bg2;
+}
+#workspaces button:hover {
+    background: @bg3;
+    color: @fg0;
+}
+#workspaces button.urgent {
+    color: @red;
 }
 
 /* Each module */
-#battery,
-#clock,
+#window,
 #cpu,
-#custom-layout,
+#temperature,
 #memory,
 #disk,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
 #custom-playerctl,
-#tray,
-#backlight,
-#language,
 #upower,
-#idle_inhibitor,
-#bluetooth {
+#pulseaudio,
+#clock,
+#tray {
+    background: @bg2;
     padding: 0.0em 0.6em;
+    margin-right: 4px;
+    margin-left: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#cpu {
+    color: @blue;
+}
+#temperature {
+    color: @aqua;
+}
+#memory {
+    color: @purple;
+}
+#disk{
+    color: @grey;
+}
+#upower{
+    color: @green;
+}
+#pulseaudio {
+    color: @yellow;
+}
+#clock.date {
+    color: @fg1;
+}
+#clock.time {
+    color: @fg0;
+}
+
+#tooltip {
+    background: @bg0;
 }
 
 /* Each module that should blink */
-#mode,
-#memory,
-#disk,
+#cpu,
 #temperature,
-#battery {
+#memory,
+#disk {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -140,24 +124,8 @@
 #memory.critical,
 #cpu.critical,
 #temperature.critical,
-#battery.critical {
-    color: @critical;
-}
 #upower.critical {
-    color: @critical;
-}
-
-/* Each critical that should blink */
-#mode,
-#memory.critical,
-#temperature.critical,
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-#upower.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
+    color: @red;
 }
 
 /* Each warning */
@@ -165,163 +133,6 @@
 #memory.warning,
 #cpu.warning,
 #temperature.warning,
-#battery.warning {
-    color: @bg_dim;
-}
 #upower.warning {
-    color: @bg_dim;
-}
-
-/* Each warning that should blink */
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#upower.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#custom-arrow1 {
-    font-size: 2.12em;
-    color: @fg0;
-    background: @bg0;
-}
-#custom-arrow2 {
-    font-size: 2.12em;
-    color: @tray1bg;
-    background: @bg0;
-}
-#custom-arrow3 {
-    font-size: 2.12em;
-    color: @tray2bg;
-    background: @tray1bg;
-}
-#custom-arrow4 {
-    font-size: 2.12em;
-    color: @tray3bg;
-    background: @tray2bg;
-}
-#custom-arrow5 {
-    font-size: 2.12em;
-    color: @tray4bg;
-    background: @tray3bg;
-}
-#custom-arrow6 {
-    font-size: 2.12em;
-    color: @tray5bg;
-    background: @tray4bg;
-}
-
-/* And now modules themselves in their respective order */
-#idle_inhibitor {
-    background: @font_dark_alternative;
-    color: @font_normal;
-}
-#custom-playerctl {
-    font-size: 0.9em;
-    color: @font_normal;
-}
-#custom-playerctl.paused{
-    color: @font_dark_alternative;
-    font-size: 0.9em;
-}
-/* Workspaces stuff */
-#workspaces {
-}
-#workspaces button {
-    background: @fg0;
-    padding: 0em 1.1em;
-    color: @font_dark_alternative;
-    min-width: 0em;
-}
-#workspaces button.active {
     color: @orange;
-    font-weight: bolder; /* Somewhy the bar-wide setting is ignored*/
-}
-#workspaces button.urgent {
-    color: @red;
-    opacity: 1;
-}
-#battery {
-    color: @font_normal;
-    background-color: @tray1bg;
-}
-#upower{
-    color: @yellowfg;
-    background-color: @tray1bg;
-}
-#network {
-    background: @tray2bg;
-    color: @yellowfg;
-}
-#pulseaudio {
-    background: @tray2bg;
-    color: @yellowfg;
-}
-#pulseaudio.muted {
-    color: @orange;
-}
-#pulseaudio.source-muted {
-    /* moved to config */
-}
-#temperature {
-    background-color: @tray3bg;
-    color: @fg1;
-}
-#temperature.critical {
-    background:  @critical;
-}
-#memory {
-    background-color: @tray3bg;
-}
-#disk{
-    background-color: @tray3bg;
-}
-#cpu {
-    background: @tray3bg;
-    color: @fg1;
-}
-#cpu.critical {
-    color: @bg_dim;
-    background: @critical;
-}
-#bluetooth {
-    background: @tray3bg;
-    color: @fg1;
-}
-#language {
-    background: @tray3bg;
-    color: @font_normal;
-}
-#clock.date {
-    background: @tray4bg;
-    color: @font_faded;
-}
-#clock.time {
-    background: @tray4bg;
-    color: @font_normal;
-}
-#tray {
-    background: @tray5bg;
-}
-#custom-layout {
-    background: @bg3;
-}
-#mode { /* Shown current Sway mode (resize etc.) */
-    color: @fg0;
-    background: @bg0;
-}
-
-#backlight {
-    background: @backlight;
-}
-#window {
-    margin-right: 10px;
-    margin-left: 10px;
-    font-weight: normal;
-}
-tooltip {
-    background-color: #32302f;
 }
