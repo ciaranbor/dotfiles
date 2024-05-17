@@ -122,6 +122,7 @@ export VISUAL='nvim'
 alias shut="shutdown now"
 alias ta="tmux attach"
 alias vim="nvim"
+alias ldf="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # Functions
 dfgit() {
