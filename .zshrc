@@ -121,6 +121,8 @@ export VISUAL='nvim'
 alias shut="shutdown now"
 alias ta="tmux attach"
 alias vim="nvim"
+alias icat="kitty +kitten icat"
+alias diff="kitty +kitten diff"
 
 # Functions
 dfgit() {
