@@ -5,15 +5,15 @@ return {
         config = function()
             require("chatgpt").setup({
                 openai_params = {
-                    model = "gpt-4",
+                    model = "gpt-4o",
                     max_tokens = 3000,
                 },
                 openai_edit_params = {
-                    model = "gpt-4",
+                    model = "gpt-4o",
                     max_tokens = 3000,
                 },
                 openai_chat_params = {
-                    model = "gpt-4",
+                    model = "gpt-4o",
                     max_tokens = 3000,
                 },
             })
