@@ -63,20 +63,6 @@ else
 fi
 
 #
-# vim
-#
-echo -e "${GREEN}Configuring Vim...${NC}"
-
-if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-mkdir -p ~/.vim/undodir
-
-vim -c "PlugInstall --sync" +qa
-
-#
 # tmux
 #
 echo -e "${GREEN}Configuring Tmux...${NC}"
