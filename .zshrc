@@ -127,7 +127,7 @@ dfgit() {
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
 }
 
-export TERM="tmux-256color"
+export TERM="xterm-kitty"
 export LANG="en_IE.UTF-8"
 export LC_CTYPE="en_IE.UTF-8"
 
