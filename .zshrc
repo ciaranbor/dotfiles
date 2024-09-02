@@ -133,7 +133,7 @@ lgit() {
     lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME
 }
 
-export TERM="xterm-kitty"
+export TERM="xterm-256color"
 export LANG="en_IE.UTF-8"
 export LC_CTYPE="en_IE.UTF-8"
 
