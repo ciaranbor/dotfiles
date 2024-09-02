@@ -1,0 +1,11 @@
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_material_medium_dark.toml"
+]
+
+[window]
+opacity = 0.9
+
+[font]
+normal = { family = "UbuntuSansMono Nerd Font", style = "Regular"}
+size = 12
+
