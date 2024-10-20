@@ -6,6 +6,6 @@ import = [
 opacity = 0.9
 
 [font]
-normal = { family = "UbuntuSansMono Nerd Font", style = "Regular"}
+normal = { family = "FiraCode Nerd Font", style = "Regular"}
 size = 12
 
