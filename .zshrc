@@ -91,7 +91,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export PATH=$HOME/.cargo/bin:$PATH
+[[ ! -f ~/.cargo/env ]] || . "$HOME/.cargo/env"
+
 
 #
 # You may need to manually set your language environment
@@ -131,7 +132,6 @@ lgit() {
     lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME
 }
 
-export TERM="xterm-256color"
 export LANG="en_IE.UTF-8"
 export LC_CTYPE="en_IE.UTF-8"
 
