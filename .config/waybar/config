@@ -14,6 +14,7 @@
     "modules-right": [
         "upower",
         "pulseaudio",
+        "bluetooth",
         "clock#date",
         "clock#time",
         "tray"
@@ -135,7 +136,7 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon}   {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
         "format-bluetooth-muted": "{icon}  ",
         "format-muted": "󰝟",
         "format-icons": {
@@ -160,7 +161,8 @@
             "enabled": "",
             "disabled": ""
         },
-        "tooltip-format": "{}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
         "on-click": "blueman-manager"
     },
     "clock#date": {

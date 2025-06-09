@@ -65,6 +65,7 @@
 /* Each module */
 #window,
 #cpu,
+#bluetooth,
 #temperature,
 #memory,
 #disk,
@@ -82,6 +83,9 @@
 }
 
 #cpu {
+    color: @blue;
+}
+#bluetooth {
     color: @blue;
 }
 #temperature {
