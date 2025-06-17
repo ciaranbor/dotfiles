@@ -10,3 +10,5 @@
     -c '$wincmd w' -c 'wincmd J'
 [credential]
 	helper = store
+[init]
+	defaultBranch = main
