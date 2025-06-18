@@ -31,7 +31,7 @@ return {
         { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
     },
     opts = {
-        log_level = "debug",
+        log_level = "error",
         visual_demotion_delay_ms = 100, -- Slower selection demotion
         connection_wait_delay = 500, -- Longer delay for @ mention batching
         terminal = {
