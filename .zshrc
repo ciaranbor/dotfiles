@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    vi-mode
+    zsh-vi-mode
     zsh-autosuggestions
     fast-syntax-highlighting
 )
@@ -140,7 +140,7 @@ export LC_CTYPE="en_IE.UTF-8"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Settings specific to the local system
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local 
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.p10k.zsh.local ]] && echo "source ~/.p10k.zsh.local" >> ~/.p10k.zsh
 [[ -f ~/.vimrc.local ]] && echo "source ~/.vimrc.local" >> ~/.vimrc
 [[ -f ~/.tmux.conf.local ]] && echo "source ~/.tmux.conf.local" >> ~/.tmux.conf
