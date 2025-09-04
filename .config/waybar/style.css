@@ -71,7 +71,7 @@
 #disk,
 #custom-playerctl,
 #upower,
-#pulseaudio,
+#wireplumber,
 #clock,
 #tray {
     background: @bg2;
@@ -100,7 +100,7 @@
 #upower{
     color: @green;
 }
-#pulseaudio {
+#wireplumber {
     color: @yellow;
 }
 #clock.date {

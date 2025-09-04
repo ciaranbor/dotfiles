@@ -13,7 +13,7 @@
     ],
     "modules-right": [
         "upower",
-        "pulseaudio",
+        "wireplumber",
         "bluetooth",
         "clock#date",
         "clock#time",
@@ -133,7 +133,7 @@
         },
         "on-click": "alacritty -e nmtui"
     },
-    "pulseaudio": {
+    "wireplumber": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%",
