@@ -88,7 +88,7 @@
         "interval": 5,
         "format": " {usage:2}%",
         "tooltip": false,
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+        "on-click": "alacritty -e htop --sort-key PERCENT_CPU"
     },
     "temperature": {
         "thermal-zone": 2,
@@ -102,11 +102,11 @@
             "",
             ""
         ],
-        "on-click": "kitty -e htop --sort-key PERCENT_CPU"
+        "on-click": "alacritty -e htop --sort-key PERCENT_CPU"
     },
     "memory": {
         "format": " {}%",
-        "on-click": "kitty -e htop --sort-key PERCENT_MEM"
+        "on-click": "alacritty -e htop --sort-key PERCENT_MEM"
     },
     "disk": {
         "interval": 600,
@@ -131,7 +131,7 @@
                 "󰤨"
             ]
         },
-        "on-click": "kitty -e nmtui"
+        "on-click": "alacritty -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
