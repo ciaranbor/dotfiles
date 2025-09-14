@@ -21,14 +21,14 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
-        "format": "{name} {icon}",
+        "format": "{name}{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "",
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "6": " ",
             "7": "",
             "8": "",
             "9": "",
@@ -213,13 +213,14 @@
         "on-click": "playerctl play-pause"
     },
     "mpris": {
-        "format": "DEFAULT: {player_icon} {dynamic}",
-        "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
         "player-icons": {
             "default": "▶"
         },
         "status-icons": {
             "paused": "⏸"
-        }
+        },
+        "max-length": 1000
     }
 }
