@@ -1,20 +1,19 @@
 {
-    "layer": "top", // Waybar at top layer
+    "layer": "top",
     "modules-left": [
         "window",
         "cpu",
         "temperature",
         "memory",
         "disk",
-        "custom/playerctl"
+        "mpris"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "upower",
+        "battery",
         "wireplumber",
-        "bluetooth",
         "clock#date",
         "clock#time",
         "tray"
@@ -47,14 +46,14 @@
         "separate-outputs": true
     },
     "battery": {
-        "interval": 2,
+        "interval": 60,
         "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": "{icon} {capacity}%",
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
         "format-icons": {
             "discharging": [
                 "󰂎",
@@ -85,16 +84,17 @@
         }
     },
     "cpu": {
-        "interval": 5,
-        "format": " {usage:2}%",
-        "tooltip": false,
-        "on-click": "alacritty -e htop --sort-key PERCENT_CPU"
+        "interval": 10,
+        "format": "{usage}% ",
+        "on-click": "alacritty -e htop --sort-key PERCENT_CPU",
+        "tooltip": true,
+        "format-tooltip": "Avg {avg_frequency} GHz"
     },
     "temperature": {
         "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
+        "format": "{temperatureC}°C {icon}",
         "format-icons": [
             "",
             "",
@@ -105,16 +105,16 @@
         "on-click": "alacritty -e htop --sort-key PERCENT_CPU"
     },
     "memory": {
-        "format": " {}%",
+        "format": "{}% ",
         "on-click": "alacritty -e htop --sort-key PERCENT_MEM"
     },
     "disk": {
         "interval": 600,
-        "format": " {percentage_used}%"
+        "format": "{percentage_used}% "
     },
     "network": {
         "interface": "*s*", // (Optional) To force the use of this interface
-        "format-wifi": "{icon} {signalStrength}%",
+        "format-wifi": "{signalStrength}% {icon}",
         "format-ethernet": "󰈁",
         "format-linked": "󰈁",
         "format-disconnected": "󰤭",
@@ -135,10 +135,10 @@
     },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": "{icon}  ",
-        "format-muted": "󰝟",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "{icon} ",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -147,10 +147,9 @@
             "portable": "",
             "car": "",
             "default": [
-                "󰕿",
+                "",
                 "",
-                "󰕾",
-                ""
+                " "
             ]
         },
         "on-click": "pavucontrol"
@@ -167,7 +166,7 @@
     },
     "clock#date": {
         "interval": 20,
-        "format": "  {:%a %d %b}",
+        "format": "{:%a %d %b} ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
@@ -193,14 +192,13 @@
     },
     "clock#time": {
         "interval": 10,
-        "format": "  {:%H:%M}",
+        "format": "{:%H:%M} ",
         "tooltip": false
     },
     "upower": {
         "icon-size": 14,
         "hide-if-empty": true,
-        "tooltip": true,
-        "tooltip-spacing": 20
+        "tooltip": true
     },
     "tray": {
         "spacing": 10,
@@ -213,5 +211,15 @@
         "exec": "$HOME/.config/waybar/custom_modules/media_player_status.py",
         "return-type": "json",
         "on-click": "playerctl play-pause"
+    },
+    "mpris": {
+        "format": "DEFAULT: {player_icon} {dynamic}",
+        "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        }
     }
 }

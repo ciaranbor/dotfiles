@@ -58,6 +58,10 @@
     background: @bg3;
     color: @fg0;
 }
+#workspaces button.active:hover {
+    background: @fg0;
+    color: @bg2;
+}
 #workspaces button.urgent {
     color: @red;
 }
@@ -71,6 +75,7 @@
 #disk,
 #custom-playerctl,
 #upower,
+#battery,
 #wireplumber,
 #clock,
 #tray {
@@ -98,6 +103,9 @@
     color: @grey;
 }
 #upower{
+    color: @green;
+}
+#battery{
     color: @green;
 }
 #wireplumber {
@@ -128,6 +136,7 @@
 #memory.critical,
 #cpu.critical,
 #temperature.critical,
+#battery.critical,
 #upower.critical {
     color: @red;
 }
@@ -137,6 +146,7 @@
 #memory.warning,
 #cpu.warning,
 #temperature.warning,
+#battery.warning,
 #upower.warning {
     color: @orange;
 }
