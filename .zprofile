@@ -12,7 +12,7 @@ export QT_QPA_PLATFORM=wayland
 if [ -z $DISPLAY ]; then
     case $(tty) in
         /dev/tty1)
-            exec Hyprland
+            exec start-hyprland
             ;;
     esac
 fi
