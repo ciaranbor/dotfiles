@@ -85,6 +85,9 @@ plugins=(
     fast-syntax-highlighting
 )
 
+# Allow local machines to add plugins
+[[ -f ~/.zshrc.plugins.local ]] && source ~/.zshrc.plugins.local
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
