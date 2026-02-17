@@ -78,6 +78,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
 plugins=(
     git
     zsh-vi-mode
@@ -126,6 +129,7 @@ alias shut="shutdown now"
 alias ta="tmux attach"
 alias vim="nvim"
 alias ldf="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias nix-dev='nix develop -c zsh'
 
 # Functions
 dfgit() {
