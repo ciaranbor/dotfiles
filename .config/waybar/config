@@ -204,14 +204,6 @@
         "spacing": 10,
         "show-passive-items": true
     },
-    "custom/playerctl": {
-        "max-length": 120,
-        "format": "{icon} {}",
-        "escape": true,
-        "exec": "$HOME/.config/waybar/custom_modules/media_player_status.py",
-        "return-type": "json",
-        "on-click": "playerctl play-pause"
-    },
     "mpris": {
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} <i>{dynamic}</i>",
