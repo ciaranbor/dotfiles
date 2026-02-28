@@ -3,21 +3,6 @@
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-SKIP_HYPRLAND=false
-
-while [[ $# -gt 0 ]]; do
-    case $1 in
-    --skip-hyprland)
-        SKIP_HYPRLAND=true
-        shift
-        ;;
-    *)
-        echo "Unknown option: $1"
-        exit 1
-        ;;
-    esac
-done
-
 #
 # zsh
 #
@@ -82,21 +67,6 @@ else
     pushd ~/.tmux/plugins/tpm
     git pull
     popd
-fi
-
-#
-# Qutebrowser
-#
-/usr/share/qutebrowser/scripts/dictcli.py install en-GB
-
-#
-# Hyprload
-#
-
-if [ "$SKIP_HYPRLAND" = false ]; then
-    if [[ ! -d ~/.local/share/hyprload ]]; then
-        curl -sSL https://raw.githubusercontent.com/Duckonaut/hyprload/main/install.sh | bash
-    fi
 fi
 
 #

@@ -50,4 +50,3 @@ setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS SHARE_HISTORY
 # Settings specific to the local system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.p10k.zsh.local ]] && source ~/.p10k.zsh.local
-[[ -f ~/.vimrc.local ]] && source ~/.vimrc.local
