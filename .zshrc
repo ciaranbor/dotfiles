@@ -42,6 +42,8 @@ lgit() {
 export LANG="en_IE.UTF-8"
 export LC_CTYPE="en_IE.UTF-8"
 
+setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS SHARE_HISTORY
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
