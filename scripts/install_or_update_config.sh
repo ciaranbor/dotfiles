@@ -12,7 +12,7 @@ while [[ $# -gt 0 ]]; do
         shift
         ;;
     *)
-        echo "Unknow option: $1"
+        echo "Unknown option: $1"
         exit 1
         ;;
     esac
