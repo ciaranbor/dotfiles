@@ -49,6 +49,5 @@ setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS SHARE_HISTORY
 
 # Settings specific to the local system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-[[ -f ~/.p10k.zsh.local ]] && echo "source ~/.p10k.zsh.local" >> ~/.p10k.zsh
-[[ -f ~/.vimrc.local ]] && echo "source ~/.vimrc.local" >> ~/.vimrc
-[[ -f ~/.tmux.conf.local ]] && echo "source ~/.tmux.conf.local" >> ~/.tmux.conf
+[[ -f ~/.p10k.zsh.local ]] && source ~/.p10k.zsh.local
+[[ -f ~/.vimrc.local ]] && source ~/.vimrc.local
