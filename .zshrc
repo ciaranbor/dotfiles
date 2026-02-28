@@ -30,8 +30,6 @@ export VISUAL='nvim'
 alias shut="shutdown now"
 alias ta="tmux attach"
 alias vim="nvim"
-alias ldf="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias nix-dev='nix develop -c zsh'
 
 dfgit() {
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
