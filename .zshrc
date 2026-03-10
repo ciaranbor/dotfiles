@@ -26,6 +26,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+export BROWSER='firefox'
 
 alias shut="shutdown now"
 alias ta="tmux attach"
