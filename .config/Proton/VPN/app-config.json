@@ -1,8 +1,10 @@
 {
     "tray_pinned_servers": [
         "CH",
+        "CH-UK",
         "IS-UK",
         "SE-UK"
     ],
-    "connect_at_app_startup": "CH"
+    "connect_at_app_startup": "CH",
+    "start_app_minimized": false
 }
