@@ -1,0 +1,6 @@
+font-family = "FiraCode Nerd Font"
+font-size = 12
+
+theme = Gruvbox Material Dark
+
+keybind = shift+enter=text:\x1b[13;2u
