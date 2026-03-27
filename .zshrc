@@ -24,6 +24,14 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.cargo/env ]] || . "$HOME/.cargo/env"
 
+# pnpm
+export PNPM_HOME="/home/ciaran/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 export BROWSER='firefox'
@@ -51,3 +59,4 @@ setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS SHARE_HISTORY
 # Settings specific to the local system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.p10k.zsh.local ]] && source ~/.p10k.zsh.local
+
