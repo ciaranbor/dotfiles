@@ -11,8 +11,6 @@ This is a **bare git repository** managing dotfiles using the [Atlassian method]
 - `ldf` / `lgit` — lazygit wrappers for the dotfiles repo
 - To track a new file: `dfgit add ~/.config/foo/bar.conf && dfgit commit -m "Add foo config"`
 
-**Branches:** `main` (Hyprland/Wayland), `sway` (legacy Sway config)
-
 ## What's Managed
 
 - **Shell:** `.zshrc`, `.zprofile`, `.p10k.zsh` — oh-my-zsh with powerlevel10k, plugins: git, zsh-vi-mode, zsh-autosuggestions, fast-syntax-highlighting
