@@ -86,7 +86,7 @@
     "cpu": {
         "interval": 10,
         "format": "{usage}% ",
-        "on-click": "alacritty -e htop --sort-key PERCENT_CPU",
+        "on-click": "ghostty -e htop --sort-key PERCENT_CPU",
         "tooltip": true,
         "format-tooltip": "Avg {avg_frequency} GHz"
     },
@@ -102,11 +102,11 @@
             "",
             ""
         ],
-        "on-click": "alacritty -e htop --sort-key PERCENT_CPU"
+        "on-click": "ghostty -e htop --sort-key PERCENT_CPU"
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "alacritty -e htop --sort-key PERCENT_MEM"
+        "on-click": "ghostty -e htop --sort-key PERCENT_MEM"
     },
     "disk": {
         "interval": 600,
@@ -131,7 +131,7 @@
                 "󰤨"
             ]
         },
-        "on-click": "alacritty -e nmtui"
+        "on-click": "ghostty -e nmtui"
     },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float
