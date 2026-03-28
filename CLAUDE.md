@@ -15,10 +15,17 @@ This is a **bare git repository** managing dotfiles using the [Atlassian method]
 
 ## What's Managed
 
-- **Shell:** `.zshrc`, `.zprofile` — oh-my-zsh with powerlevel10k, plugins: git, zsh-vi-mode, zsh-autosuggestions, fast-syntax-highlighting
-- **Hyprland:** `.config/hypr/` — split into `hyprland.conf` (main), `keybinds.conf`, `rules.conf`, `execs.conf`, `hypridle.conf`, `hyprlock.conf`, `hyprsunset.conf`. Machine-specific files (`monitors.conf`, `envs.conf`) are sourced but not tracked.
+- **Shell:** `.zshrc`, `.zprofile`, `.p10k.zsh` — oh-my-zsh with powerlevel10k, plugins: git, zsh-vi-mode, zsh-autosuggestions, fast-syntax-highlighting
+- **Neovim:** `.config/nvim/` — LazyVim-based Lua config with plugins: claudecode, gruvbox, latex, tmux integration
+- **Tmux:** `.tmux.conf`, `.tmux/themes/gruvbox-material`
+- **Git:** `.gitconfig`, `.gitignore`
+- **Hyprland:** `.config/hypr/` — split into `hyprland.conf` (main), `keybinds.conf`, `rules.conf`, `execs.conf`, `hypridle.conf`, `hyprlock.conf`, `hyprsunset.conf`, `envs.conf`. Machine-specific `monitors.conf` is sourced but not tracked.
 - **Waybar:** `.config/waybar/config`, `.config/waybar/style.css`
-- **Other:** wluma, spotify-launcher, GTK settings, Proton VPN
+- **Ghostty:** `.config/ghostty/config.ghostty` (terminal emulator)
+- **Wofi:** `.config/wofi/config`, `.config/wofi/style.css` (app launcher)
+- **Dunst:** `.config/dunst/dunstrc`, `.config/dunst/notify` (notifications)
+- **Aerospace:** `.config/aerospace/aerospace.toml` (macOS window manager, for cross-platform use)
+- **Other:** wluma, spotify-launcher, GTK settings, Proton VPN, `scripts/install_or_update_config.sh`
 
 ## Conventions
 
