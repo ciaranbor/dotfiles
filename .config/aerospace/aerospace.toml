@@ -90,7 +90,13 @@ automatically-unhide-macos-hidden-apps = false
     #     activate
     # end tell'
     # '''
-    alt-enter = 'exec-and-forget open -na /Applications/Ghostty.app'
+    alt-enter = '''exec-and-forget osascript -e '
+    if application "Ghostty" is running then
+        tell application "System Events" to click menu item "New Window" of menu "File" of menu bar 1 of process "Ghostty"
+    else
+        tell application "Ghostty" to activate
+    end if'
+    '''
 
     alt-b     = 'exec-and-forget open -na /Applications/Firefox.app'
     alt-s     = 'exec-and-forget open -a /Applications/Slack.app'
