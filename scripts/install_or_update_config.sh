@@ -9,7 +9,7 @@ NC='\033[0m' # No Color
 echo -e "${GREEN}Configuring OhMyZsh...${NC}"
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
     pushd ~/.oh-my-zsh
     git pull
