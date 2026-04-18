@@ -15,6 +15,10 @@ cask "nikitabobko/tap/aerospace"
 # Fonts
 cask "font-fira-code-nerd-font"
 
+# AI
+brew "claude-code"
+cask "claude"
+
 # Applications
 cask "firefox"
 cask "slack"
