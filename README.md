@@ -94,20 +94,55 @@ System packages that need to be installed before setup. Shell plugins (oh-my-zsh
 
 firefox, signal-desktop, element-desktop, spotify, vlc, freetube, stremio, steam, tor-browser, zoom, jitsi-meet-desktop, protonvpn-app, dolphin, htop
 
-## Installation
+## Installation (macOS)
 
-Clone the bare repo and run the install script:
+### 1. Install Homebrew
+
+See <https://brew.sh>
+
+### 2. Install Firefox
 
 ```sh
-git clone --bare <repo-url> $HOME/.dotfiles
-alias dfgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dfgit checkout
-scripts/install_or_update_config.sh
+brew install --cask firefox
 ```
 
-The install script sets up Oh-My-Zsh with plugins, Powerlevel10k, and the Tmux plugin manager.
+Set up your password manager and log in to GitHub.
+
+### 3. Set up SSH keys for GitHub
+
+Generate a key and register it at <https://github.com/settings/keys>.
+
+### 4. Clone and checkout
+
+```sh
+git clone --bare git@github.com:ciaranbor/dotfiles.git $HOME/.dotfiles
+alias dfgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dfgit checkout
+```
 
 If checkout fails due to existing files, back them up first or use `dfgit checkout 2>&1 | grep "\t" | awk '{print $1}' | xargs -I{} mv {} {}.bak`.
+
+### 5. Install packages
+
+```sh
+brew bundle --file=~/Brewfile
+```
+
+### 6. Run the install script
+
+Switch to Ghostty, then:
+
+```sh
+~/scripts/install_or_update_config.sh
+```
+
+This installs Oh-My-Zsh with plugins, Powerlevel10k, and the Tmux plugin manager. Restart your shell afterwards.
+
+### 7. Post-install
+
+- Open `nvim` — lazy.nvim will auto-install plugins on first launch.
+- Open `tmux`, press `prefix + I` to install tmux plugins.
+- Install Rust: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 ## Machine-Specific Config
 
