@@ -98,7 +98,7 @@ automatically-unhide-macos-hidden-apps = false
     end if'
     '''
 
-    alt-b     = 'exec-and-forget open -na /Applications/Firefox.app'
+    alt-b     = 'exec-and-forget sleep 0.3 && open -na /Applications/Firefox.app'
     alt-s     = 'exec-and-forget open -a /Applications/Slack.app'
     alt-g     = 'exec-and-forget open -a /Applications/ChatGPT.app'
 
