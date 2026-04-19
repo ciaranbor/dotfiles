@@ -25,12 +25,14 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.cargo/env ]] || . "$HOME/.cargo/env"
 
 # pnpm
-export PNPM_HOME="/home/ciaran/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR='nvim'
 export VISUAL='nvim'
