@@ -8,6 +8,7 @@ brew "ripgrep"
 brew "jq"
 brew "pnpm"
 brew "gh"
+brew "imagemagick"
 
 # Terminal & Window Manager
 cask "ghostty"
@@ -17,7 +18,7 @@ cask "nikitabobko/tap/aerospace"
 cask "font-fira-code-nerd-font"
 
 # AI
-brew "claude-code"
+cask "claude-code"
 cask "claude"
 
 # Applications
