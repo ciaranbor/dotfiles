@@ -8,6 +8,7 @@ brew "ripgrep"
 brew "jq"
 brew "pnpm"
 brew "gh"
+brew "uv"
 brew "imagemagick"
 
 # Terminal & Window Manager
