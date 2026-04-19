@@ -11,6 +11,9 @@ brew "pnpm"
 brew "gh"
 brew "uv"
 brew "imagemagick"
+brew "ghostscript"
+brew "tectonic"
+brew "mermaid-cli"
 
 # Terminal & Window Manager
 cask "ghostty"
