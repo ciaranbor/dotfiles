@@ -7,6 +7,7 @@ brew "fd"
 brew "ripgrep"
 brew "jq"
 brew "pnpm"
+brew "gh"
 
 # Terminal & Window Manager
 cask "ghostty"
