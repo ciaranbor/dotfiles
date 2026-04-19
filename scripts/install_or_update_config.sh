@@ -70,6 +70,14 @@ else
 fi
 
 #
+# python (neovim provider)
+#
+echo -e "${GREEN}Configuring Python for Neovim...${NC}"
+
+uv python install --default
+uv tool install --upgrade pynvim
+
+#
 # Done
 #
 echo -e "${GREEN}Configuration complete.${NC}"
