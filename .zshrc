@@ -41,6 +41,7 @@ export BROWSER='firefox'
 alias shut="shutdown now"
 alias ta="tmux attach"
 alias vim="nvim"
+alias svim="sudo -e"
 
 dfgit() {
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
