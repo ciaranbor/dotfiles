@@ -1,7 +1,22 @@
-# CLAUDE.md
+---
+paths:
+  - ".zshrc"
+  - ".zprofile"
+  - ".p10k.zsh"
+  - ".tmux.conf"
+  - ".tmux/**"
+  - ".gitconfig"
+  - ".gitignore"
+  - "Brewfile"
+  - "README.md"
+  - "scripts/**"
+  - ".config/{nvim,hypr,waybar,ghostty,wofi,dunst,aerospace,wluma,brightness,gtk-3.0,Proton}/**"
+  - ".config/spotify-launcher.conf"
+  - ".claude/rules/dotfiles.md"
+---
+# Dotfiles repository
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
+Guidance for working on the dotfiles tracked in the bare repo at `~/.dotfiles`. This rule only loads when a tracked dotfile is read.
 ## Repository Structure
 
 This is a **bare git repository** managing dotfiles using the [Atlassian method](https://www.atlassian.com/git/tutorials/dotfiles). The git directory is `~/.dotfiles` and the work tree is `$HOME`.
