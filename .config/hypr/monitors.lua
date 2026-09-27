@@ -5,7 +5,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output   = "desc:Dell Inc. S2719DGF 2ZJZ4V2",
-    mode     = "preferred",
+    mode     = "2560x1440@144",
     position = "0x0",
     scale    = "auto",
 })
