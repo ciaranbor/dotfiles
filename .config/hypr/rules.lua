@@ -48,18 +48,18 @@ hl.window_rule({
     float = true,
 })
 
-hl.window_rule({match = {class = "steam"}, workspace = "3"})
-hl.window_rule({match = {class = "steam_app"}, workspace = "3"})
-hl.window_rule({match = {class = "gamescope"}, workspace = "3"})
+hl.window_rule({match = {class = "steam"}, workspace = "3 silent"})
+hl.window_rule({match = {class = "steam_app"}, workspace = "3 silent"})
+hl.window_rule({match = {class = "gamescope"}, workspace = "3 silent"})
 
-hl.window_rule({match = {class = "FreeTube"}, workspace = "4"})
-hl.window_rule({match = {class = "vlc"}, workspace = "4"})
+hl.window_rule({match = {class = "FreeTube"}, workspace = "4 silent"})
+hl.window_rule({match = {class = "vlc"}, workspace = "4 silent"})
 
-hl.window_rule({match = {class = "Signal"}, workspace = "5"})
-hl.window_rule({match = {class = "Element"}, workspace = "5"})
-hl.window_rule({match = {class = "Jitsi Meet"}, workspace = "5"})
+hl.window_rule({match = {class = "Signal"}, workspace = "5 silent"})
+hl.window_rule({match = {class = "Element"}, workspace = "5 silent"})
+hl.window_rule({match = {class = "Jitsi Meet"}, workspace = "5 silent"})
 
-hl.window_rule({match = {class = "proton.vpn.app.gtk"}, workspace = "special:scratchpad"})
+hl.window_rule({match = {class = "proton.vpn.app.gtk"}, workspace = "special:scratchpad silent"})
 
 hl.window_rule({match = {class = "com.stremio.stremio"}, idle_inhibit = "fullscreen"})
 hl.window_rule({match = {class = "vlc"}, idle_inhibit = "fullscreen"})
