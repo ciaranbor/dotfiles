@@ -63,8 +63,8 @@ hl.bind(mainMod .. " + CONTROL + l", hl.dsp.workspace.move({ monitor = "right" }
 hl.bind(mainMod .. " + CONTROL + l", hl.dsp.focus({ monitor = "right" }))
 
 -- special workspace (scratchpad)
-hl.bind(mainMod .. " + Tab",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + Minus", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + Tab",         hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind(mainMod .. " + Minus", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
