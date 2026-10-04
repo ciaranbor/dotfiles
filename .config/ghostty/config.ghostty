@@ -8,3 +8,5 @@ keybind = shift+enter=text:\x1b[13;2u
 shell-integration-features = ssh-terminfo
 
 macos-option-as-alt = left
+
+clipboard-read = allow

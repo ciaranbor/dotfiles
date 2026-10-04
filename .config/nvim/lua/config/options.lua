@@ -5,3 +5,7 @@
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
+if vim.env.SSH_CONNECTION then
+    vim.g.clipboard = "osc52"
+end
