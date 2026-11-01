@@ -128,7 +128,7 @@ end, { locked = true })
 hl.bind("CONTROL + Print", hl.dsp.exec_cmd([[grim -g "$(slurp)"]]), { locked = true })
 
 -- Record the focused monitor
-hl.bind(altMod .. " + SUPER + Print", function()
+hl.bind(altMod .. " + Print", function()
   local mon = hl.get_active_monitor()
   if mon then
     hl.dispatch(hl.dsp.exec_cmd(
@@ -138,9 +138,9 @@ hl.bind(altMod .. " + SUPER + Print", function()
 end)
 
 -- Record a selected region
-hl.bind(altMod .. " + SUPER + CONTROL + Print", hl.dsp.exec_cmd(
+hl.bind(altMod .. " + CONTROL + Print", hl.dsp.exec_cmd(
   [[cd ~/Videos && wf-recorder -a -g "$(slurp)" -f recording_$(date +"%Y-%m-%d_%H:%M:%S").mp4]]))
 
--- hl.bind(altMod .. " + SUPER + CONTROL + s", hl.dsp.exec_cmd("wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video0 -x yuv420p"))
+-- hl.bind(altMod .. " + CONTROL + s", hl.dsp.exec_cmd("wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video0 -x yuv420p"))
 
-hl.bind(altMod .. " + SUPER + SHIFT + BackSpace", hl.dsp.exec_cmd("killall -s SIGINT wf-recorder"))
+hl.bind(altMod .. " + SHIFT + BackSpace", hl.dsp.exec_cmd("killall -s SIGINT wf-recorder"))
