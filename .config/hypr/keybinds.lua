@@ -71,8 +71,8 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(altMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind(altMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 local volumeNotification = "~/.config/dunst/notify audio"
 local brightnessNotification = "~/.config/dunst/notify brightness"
